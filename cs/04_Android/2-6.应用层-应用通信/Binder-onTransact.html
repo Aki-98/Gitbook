@@ -4,11 +4,11 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Binder-ontransact · GitBook</title>
+        <title>Binder-ontransact · CS Note</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="leah">
         
         
     
@@ -17,11 +17,19 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-accordion/accordion.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -3603,8 +3611,10 @@ protected boolean onTransact(int code, Parcel data, Parcel reply, int flags) thr
 <li>&#x5728;&#x5B9E;&#x73B0;&#x81EA;&#x5B9A;&#x4E49; <code>Binder</code> &#x7C7B;&#x65F6;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x9700;&#x8981;&#x8986;&#x5199; <code>onTransact</code> &#x65B9;&#x6CD5;&#x6765;&#x5904;&#x7406;&#x7279;&#x5B9A;&#x7684;&#x4E8B;&#x52A1;&#x4EE3;&#x7801;&#xFF0C;&#x5E76;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#x3002;</li>
 </ul>
 <h3 id="&#x603B;&#x7ED3;&#xFF1A;">&#x603B;&#x7ED3;&#xFF1A;</h3>
-<p><code>Binder</code> &#x7684; <code>onTransact</code> &#x65B9;&#x6CD5;&#x662F; Android &#x7CFB;&#x7EDF;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x8DE8;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;&#x8BF7;&#x6C42;&#x7684;&#x6838;&#x5FC3;&#x65B9;&#x6CD5;&#x3002;&#x5B83;&#x8D1F;&#x8D23;&#x9A8C;&#x8BC1;&#x8BF7;&#x6C42;&#x7684;&#x5408;&#x6CD5;&#x6027;&#x3001;&#x6267;&#x884C;&#x8BF7;&#x6C42;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5E76;&#x54CD;&#x5E94;&#x8C03;&#x7528;&#x8005;&#x3002;&#x5F00;&#x53D1;&#x8005;&#x5728;&#x5B9E;&#x73B0;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5728; <code>onTransact</code> &#x65B9;&#x6CD5;&#x4E2D;&#x5904;&#x7406;&#x7279;&#x5B9A;&#x7684;&#x4E8B;&#x52A1;&#x4EE3;&#x7801;&#xFF0C;&#x4EE5;&#x5B9E;&#x73B0;&#x8DE8;&#x8FDB;&#x7A0B;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x3002;</p>
-
+<p><code>Binder</code> &#x7684; <code>onTransact</code> &#x65B9;&#x6CD5;&#x662F; Android &#x7CFB;&#x7EDF;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x8DE8;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;&#x8BF7;&#x6C42;&#x7684;&#x6838;&#x5FC3;&#x65B9;&#x6CD5;&#x3002;&#x5B83;&#x8D1F;&#x8D23;&#x9A8C;&#x8BC1;&#x8BF7;&#x6C42;&#x7684;&#x5408;&#x6CD5;&#x6027;&#x3001;&#x6267;&#x884C;&#x8BF7;&#x6C42;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5E76;&#x54CD;&#x5E94;&#x8C03;&#x7528;&#x8005;&#x3002;&#x5F00;&#x53D1;&#x8005;&#x5728;&#x5B9E;&#x73B0;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5728; <code>onTransact</code> &#x65B9;&#x6CD5;&#x4E2D;&#x5904;&#x7406;&#x7279;&#x5B9A;&#x7684;&#x4E8B;&#x52A1;&#x4EE3;&#x7801;&#xFF0C;&#x4EE5;&#x5B9E;&#x73B0;&#x8DE8;&#x8FDB;&#x7A0B;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x3002; </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Leah 2024 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">modified time:
+2024-04-12 13:32:20
+</span></footer>
                                 
                                 </section>
                             
@@ -3647,7 +3657,7 @@ protected boolean onTransact(int code, Parcel data, Parcel reply, int flags) thr
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Binder-ontransact","level":"1.5.7.3","depth":3,"next":{"title":"Eventbus","level":"1.5.7.4","depth":3,"path":"04_Android/2-6.应用层-应用通信/EventBus.md","ref":"04_Android/2-6.应用层-应用通信/EventBus.md","articles":[]},"previous":{"title":"Aidl","level":"1.5.7.2","depth":3,"path":"04_Android/2-6.应用层-应用通信/AIDL.md","ref":"04_Android/2-6.应用层-应用通信/AIDL.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"04_Android/2-6.应用层-应用通信/Binder-onTransact.md","mtime":"2024-04-09T07:22:07.727Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-12T05:32:18.903Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Binder-ontransact","level":"1.5.7.3","depth":3,"next":{"title":"Eventbus","level":"1.5.7.4","depth":3,"path":"04_Android/2-6.应用层-应用通信/EventBus.md","ref":"04_Android/2-6.应用层-应用通信/EventBus.md","articles":[]},"previous":{"title":"Aidl","level":"1.5.7.2","depth":3,"path":"04_Android/2-6.应用层-应用通信/AIDL.md","ref":"04_Android/2-6.应用层-应用通信/AIDL.md","articles":[]},"dir":"ltr"},"config":{"plugins":["accordion","search-pro","-search","tbfed-pagefooter"],"root":"/","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Leah 2024","modify_label":"modified time:","modift_format":"YYYY-MM-DD HH:mm:ss"},"accordion":{},"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"leah","page":{"title":"CS Note"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"authorName":"leah"},"title":"CS Note","gitbook":"3.2.3"},"file":{"path":"04_Android/2-6.应用层-应用通信/Binder-onTransact.md","mtime":"2024-04-12T05:32:20.757Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-12T10:46:20.980Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -3657,11 +3667,15 @@ protected boolean onTransact(int code, Parcel data, Parcel reply, int flags) thr
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
         
     
         

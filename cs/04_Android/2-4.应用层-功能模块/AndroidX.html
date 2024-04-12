@@ -4,11 +4,11 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Androidx · GitBook</title>
+        <title>Androidx · CS Note</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="leah">
         
         
     
@@ -17,11 +17,19 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-accordion/accordion.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -3567,8 +3575,10 @@
 <p>&#x800C;&#x73B0;&#x5728;Android&#x56E2;&#x961F;&#x5B98;&#x65B9;&#x7684;&#x6001;&#x5EA6;&#x4E5F;&#x5F88;&#x660E;&#x786E;&#xFF0C;&#x672A;&#x6765;&#x90FD;&#x4F1A;&#x4E3A;AndroidX&#x4E3A;&#x4E3B;&#xFF0C;Android Support Library&#x5DF2;&#x7ECF;&#x4E0D;&#x518D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#xFF0C;&#x5E76;&#x4F1A;&#x6162;&#x6162;&#x505C;&#x6B62;&#x7EF4;&#x62A4;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x4ECE;Android Studio 3.4.2&#x5F00;&#x59CB;&#xFF0C;&#x65B0;&#x5EFA;&#x7684;&#x9879;&#x76EE;&#x5DF2;&#x7ECF;&#x5F3A;&#x5236;&#x52FE;&#x9009;&#x4F7F;&#x7528;AndroidX&#x67B6;&#x6784;&#x4E86;&#x3002;</p>
 <p>&#x90A3;&#x4E48;&#x5BF9;&#x4E8E;&#x8001;&#x9879;&#x76EE;&#x7684;&#x8FC1;&#x79FB;&#x5E94;&#x8BE5;&#x600E;&#x4E48;&#x529E;&#x5462;&#xFF1F;&#x7531;&#x4E8E;&#x6D89;&#x53CA;&#x5230;&#x4E86;&#x5305;&#x540D;&#x7684;&#x6539;&#x52A8;&#xFF0C;&#x5982;&#x679C;&#x4ECE;Android Support Library&#x5347;&#x7EA7;&#x5230;AndroidX&#x9700;&#x8981;&#x624B;&#x52A8;&#x53BB;&#x6539;&#x6BCF;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x5305;&#x540D;&#xFF0C;&#x90A3;&#x53EF;&#x771F;&#x5F97;&#x8981;&#x6539;&#x6B7B;&#x4E86;&#x3002;&#x4E3A;&#x6B64;&#xFF0C;Android Studio&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x4E00;&#x952E;&#x8FC1;&#x79FB;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5BF9;&#x7740;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x540D;&#x53F3;&#x51FB; &#x2192; Refactor &#x2192; Migrate to AndroidX&#xFF0C;&#x5C31;&#x4F1A;&#x5F39;&#x51FA;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x7684;&#x7A97;&#x53E3;&#x3002;</p>
 <p><img src="AndroidX_imgs/17.png" alt="img"></p>
-<p>&#x8FD9;&#x91CC;&#x70B9;&#x51FB;Migrate&#xFF0C;Android Studio&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x68C0;&#x67E5;&#x4F60;&#x9879;&#x76EE;&#x4E2D;&#x6240;&#x6709;&#x4F7F;&#x7528;Android Support Library&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5E76;&#x5C06;&#x5B83;&#x4EEC;&#x5168;&#x90E8;&#x6539;&#x6210;AndroidX&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x5E93;&#x3002;&#x53E6;&#x5916;Android Studio&#x8FD8;&#x4F1A;&#x5C06;&#x4F60;&#x539F;&#x6765;&#x7684;&#x9879;&#x76EE;&#x5907;&#x4EFD;&#x6210;&#x4E00;&#x4E2A;zip&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x6837;&#x5373;&#x4F7F;&#x8FC1;&#x79FB;&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x51FA;&#x73B0;&#x4E86;&#x95EE;&#x9898;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x8FD8;&#x539F;&#x56DE;&#x4E4B;&#x524D;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
-
+<p>&#x8FD9;&#x91CC;&#x70B9;&#x51FB;Migrate&#xFF0C;Android Studio&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x68C0;&#x67E5;&#x4F60;&#x9879;&#x76EE;&#x4E2D;&#x6240;&#x6709;&#x4F7F;&#x7528;Android Support Library&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5E76;&#x5C06;&#x5B83;&#x4EEC;&#x5168;&#x90E8;&#x6539;&#x6210;AndroidX&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x5E93;&#x3002;&#x53E6;&#x5916;Android Studio&#x8FD8;&#x4F1A;&#x5C06;&#x4F60;&#x539F;&#x6765;&#x7684;&#x9879;&#x76EE;&#x5907;&#x4EFD;&#x6210;&#x4E00;&#x4E2A;zip&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x6837;&#x5373;&#x4F7F;&#x8FC1;&#x79FB;&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x51FA;&#x73B0;&#x4E86;&#x95EE;&#x9898;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x8FD8;&#x539F;&#x56DE;&#x4E4B;&#x524D;&#x7684;&#x4EE3;&#x7801;&#x3002; </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Leah 2024 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">modified time:
+2024-04-12 13:32:20
+</span></footer>
                                 
                                 </section>
                             
@@ -3611,7 +3621,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Androidx","level":"1.5.5.1","depth":3,"next":{"title":"Mediasession框架","level":"1.5.5.2","depth":3,"path":"04_Android/2-4.应用层-功能模块/MediaSession框架.md","ref":"04_Android/2-4.应用层-功能模块/MediaSession框架.md","articles":[]},"previous":{"title":"2-4.应用层-功能模块","level":"1.5.5","depth":2,"path":"04_Android/2-4.应用层-功能模块/README.md","ref":"04_Android/2-4.应用层-功能模块/README.md","articles":[{"title":"Androidx","level":"1.5.5.1","depth":3,"path":"04_Android/2-4.应用层-功能模块/AndroidX.md","ref":"04_Android/2-4.应用层-功能模块/AndroidX.md","articles":[]},{"title":"Mediasession框架","level":"1.5.5.2","depth":3,"path":"04_Android/2-4.应用层-功能模块/MediaSession框架.md","ref":"04_Android/2-4.应用层-功能模块/MediaSession框架.md","articles":[]},{"title":"动画","level":"1.5.5.3","depth":3,"path":"04_Android/2-4.应用层-功能模块/动画.md","ref":"04_Android/2-4.应用层-功能模块/动画.md","articles":[]},{"title":"图片处理","level":"1.5.5.4","depth":3,"path":"04_Android/2-4.应用层-功能模块/图片处理.md","ref":"04_Android/2-4.应用层-功能模块/图片处理.md","articles":[]},{"title":"推送","level":"1.5.5.5","depth":3,"path":"04_Android/2-4.应用层-功能模块/推送.md","ref":"04_Android/2-4.应用层-功能模块/推送.md","articles":[]},{"title":"时间","level":"1.5.5.6","depth":3,"path":"04_Android/2-4.应用层-功能模块/时间.md","ref":"04_Android/2-4.应用层-功能模块/时间.md","articles":[]},{"title":"蓝牙","level":"1.5.5.7","depth":3,"path":"04_Android/2-4.应用层-功能模块/蓝牙.md","ref":"04_Android/2-4.应用层-功能模块/蓝牙.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"04_Android/2-4.应用层-功能模块/AndroidX.md","mtime":"2024-04-11T06:39:04.562Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-12T05:32:18.903Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Androidx","level":"1.5.5.1","depth":3,"next":{"title":"Mediasession框架","level":"1.5.5.2","depth":3,"path":"04_Android/2-4.应用层-功能模块/MediaSession框架.md","ref":"04_Android/2-4.应用层-功能模块/MediaSession框架.md","articles":[]},"previous":{"title":"2-4.应用层-功能模块","level":"1.5.5","depth":2,"path":"04_Android/2-4.应用层-功能模块/README.md","ref":"04_Android/2-4.应用层-功能模块/README.md","articles":[{"title":"Androidx","level":"1.5.5.1","depth":3,"path":"04_Android/2-4.应用层-功能模块/AndroidX.md","ref":"04_Android/2-4.应用层-功能模块/AndroidX.md","articles":[]},{"title":"Mediasession框架","level":"1.5.5.2","depth":3,"path":"04_Android/2-4.应用层-功能模块/MediaSession框架.md","ref":"04_Android/2-4.应用层-功能模块/MediaSession框架.md","articles":[]},{"title":"动画","level":"1.5.5.3","depth":3,"path":"04_Android/2-4.应用层-功能模块/动画.md","ref":"04_Android/2-4.应用层-功能模块/动画.md","articles":[]},{"title":"图片处理","level":"1.5.5.4","depth":3,"path":"04_Android/2-4.应用层-功能模块/图片处理.md","ref":"04_Android/2-4.应用层-功能模块/图片处理.md","articles":[]},{"title":"推送","level":"1.5.5.5","depth":3,"path":"04_Android/2-4.应用层-功能模块/推送.md","ref":"04_Android/2-4.应用层-功能模块/推送.md","articles":[]},{"title":"时间","level":"1.5.5.6","depth":3,"path":"04_Android/2-4.应用层-功能模块/时间.md","ref":"04_Android/2-4.应用层-功能模块/时间.md","articles":[]},{"title":"蓝牙","level":"1.5.5.7","depth":3,"path":"04_Android/2-4.应用层-功能模块/蓝牙.md","ref":"04_Android/2-4.应用层-功能模块/蓝牙.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["accordion","search-pro","-search","tbfed-pagefooter"],"root":"/","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Leah 2024","modify_label":"modified time:","modift_format":"YYYY-MM-DD HH:mm:ss"},"accordion":{},"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"leah","page":{"title":"CS Note"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"authorName":"leah"},"title":"CS Note","gitbook":"3.2.3"},"file":{"path":"04_Android/2-4.应用层-功能模块/AndroidX.md","mtime":"2024-04-12T05:32:20.719Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-12T10:46:20.980Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -3621,11 +3631,15 @@
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
         
     
         
