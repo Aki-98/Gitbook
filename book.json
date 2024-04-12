@@ -1,0 +1,12 @@
+{
+    "root": "/",
+    "gitbook": "3.2.3",
+    "title": "Leah Site",
+    "page": {
+        "title": "Leah Site"
+    },
+    "author": "leah",
+    "variables": {
+        "authorName": "leah"
+    }
+}

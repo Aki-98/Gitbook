@@ -1,12 +1,14 @@
   
 
-  
+<br>
+
+<br>
 
 中文
 
 ----
 
-  
+<br>
 
 你好，
 
@@ -18,7 +20,7 @@
 
 很高兴你来到我的Gitbook Site，希望我的内容对你有帮助。
 
-  
+<br>
 
 **技术笔记：**
 
@@ -26,7 +28,7 @@ https://leah-98.github.io/Gitbook/cs
 
 计算机基础、算法、语言、工程等方面的笔记
 
-  
+<br>
 
 **技术博客：**
 
@@ -34,7 +36,7 @@ https://leah-98.github.io/Gitbook/csblog
 
 每篇分中文版和英文版，目前主要为源码阅读和工程实践两个板块
 
-  
+<br>
 
 **知识笔记：**
 
@@ -42,15 +44,15 @@ https://leah-98.github.io/Gitbook/know
 
 包含一些书摘、读书笔记、通识笔记等
 
-  
+<br>
 
-  
+<br>
 
 English
 
 ------
 
-  
+<br>
 
 Hello,
 
@@ -62,7 +64,7 @@ My hobbies include engineering, reading, watching movies and TV shows, and trave
 
 I'm glad you've visited my Gitbook Site, and I hope my content is helpful to you.
 
-  
+<br>
 
 **Technical Notes**:(Only Chinese)
 
@@ -70,7 +72,7 @@ https://leah-98.github.io/Gitbook/cs
 
 Notes on computer fundamentals, algorithms, programming languages, and engineering.
 
-  
+<br>
 
 **Technical Blog**:
 
@@ -86,15 +88,15 @@ https://leah-98.github.io/Gitbook/know
 
 Includes excerpts from books, reading notes, and general knowledge notes.
 
-  
+<br>
 
-  
+<br>
 
 日本語
 
 ------
 
-  
+<br>
 
 こんにちは、
 
@@ -106,7 +108,7 @@ Includes excerpts from books, reading notes, and general knowledge notes.
 
 私のGitbookサイトを訪れていただき、うれしいです。私のコンテンツが皆さんのお役に立てれば嬉しいです。
 
-  
+<br>
 
 **技術ノート**(Only Chinese):
 
@@ -114,7 +116,7 @@ https://leah-98.github.io/Gitbook/cs
 
 コンピュータの基礎、アルゴリズム、プログラミング言語、エンジニアリングに関するノートです。
 
-  
+<br>
 
 **技術ブログ**:
 
@@ -122,7 +124,7 @@ https://leah-98.github.io/Gitbook/csblog
 
 各記事は中国語版と英語版があります。現在は主にソースコードの読み解きとエンジニアリングの実践に焦点を当てています。
 
-  
+<br>
 
 **知識ノート**(Only Chinese):
 
