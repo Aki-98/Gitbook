@@ -1,0 +1,1083 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>What does passing 0 to packagemanager.getpackageinfo as a flag mean · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../中文/" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    English
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../[Engineering Practice]/">
+            
+                <a href="../[Engineering Practice]/">
+            
+                    
+                    [engineering practice]
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../[Engineering Practice]/Setting Up Gitbook Full Process and Pitfall Record.html">
+            
+                <a href="../[Engineering Practice]/Setting Up Gitbook Full Process and Pitfall Record.html">
+            
+                    
+                    Setting up gitbook full process and pitfall record
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    [source code reading]
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.2.1" data-path="What does passing 0 to PackageManager.getPackageInfo as a Flag mean.html">
+            
+                <a href="What does passing 0 to PackageManager.getPackageInfo as a Flag mean.html">
+            
+                    
+                    What does passing 0 to packagemanager.getpackageinfo as a flag mean
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../中文/">
+            
+                <a href="../../中文/">
+            
+                    
+                    中文
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../中文/【工程实践】/">
+            
+                <a href="../../中文/【工程实践】/">
+            
+                    
+                    【工程实践】
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../中文/【工程实践】/搭建Gitbook全流程及踩坑记录.html">
+            
+                <a href="../../中文/【工程实践】/搭建Gitbook全流程及踩坑记录.html">
+            
+                    
+                    搭建gitbook全流程及踩坑记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../中文/【源码阅读】/">
+            
+                <a href="../../中文/【源码阅读】/">
+            
+                    
+                    【源码阅读】
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../中文/【源码阅读】/PackageManager.getPackageInfo(">
+            
+                <span>
+            
+                    
+                    Packagemanager.getpackageinfo()传入0作为flag意味着什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >What does passing 0 to packagemanager.getpackageinfo as a flag mean</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="environment">Environment</h1>
+<p>Android SDK 31&#xFF08;Android 12&#xFF09;</p>
+<h1 id="background">Background</h1>
+<p>The issue arose from the following line of code in the project :</p>
+<pre><code class="lang-java">PackageManager packageManager = context.getPackageManager();
+PackageInfo info = packageManager.getPackageInfo(context.getPackageName(), <span class="hljs-number">0</span>);
+</code></pre>
+<p>The <code>0</code> used as a flag parameter is flagged by PM Challenge, suggesting that Android constants should be used instead of integer values. I consulted the SDK documentation for clarification.</p>
+<p>SDK Documentation:</p>
+<p><img src="What does passing 0 to PackageManager.getPackageInfo as a Flag mean_imgs/1.png" alt="1"></p>
+<p>Android Documentation&#xFF1A;</p>
+<p><img src="What does passing 0 to PackageManager.getPackageInfo as a Flag mean_imgs/2.png" alt="2"></p>
+<p>It&apos;s evident that there is no corresponding constant value for 0.</p>
+<p>There&apos;s no direct explanation of what passing 0 signifies, but it can be inferred that using other values and combinations of values could yield more information.</p>
+<h1 id="handling-of-flags">Handling of Flags</h1>
+<p>From the previous SDK documentation, it&apos;s clear that <code>getPackageInfo</code> is an abstract method, so its implementation is not in <code>PackageManager</code>.</p>
+<p>Printing <code>context.getPackageManager().getClass().getName()</code> reveals that the <code>context.getPackageManager()</code> method returns an <code>ApplicationPackageManager</code> object.</p>
+<p>Here, we cannot yet see how the Android system retrieves <code>PackageInfo</code>, but we can observe the handling of flags.</p>
+<p><strong>ApplicationPackageManager.getPackageInfo(String packageName, int flags) --&gt;</strong></p>
+<pre><code class="lang-java"><span class="hljs-number">232</span>      <span class="hljs-meta">@Override</span>
+<span class="hljs-number">233</span>      <span class="hljs-function"><span class="hljs-keyword">public</span> PackageInfo <span class="hljs-title">getPackageInfoAsUser</span><span class="hljs-params">(String packageName, <span class="hljs-keyword">int</span> flags, <span class="hljs-keyword">int</span> userId)</span>
+234              <span class="hljs-keyword">throws</span> NameNotFoundException </span>{
+<span class="hljs-number">235</span>          PackageInfo pi =
+<span class="hljs-number">236</span>                  getPackageInfoAsUserCached(
+<span class="hljs-number">237</span>                          packageName,
+<span class="hljs-number">238</span>                          updateFlagsForPackage(flags, userId),
+<span class="hljs-number">239</span>                          userId);
+<span class="hljs-number">240</span>          <span class="hljs-keyword">if</span> (pi == <span class="hljs-keyword">null</span>) {
+<span class="hljs-number">241</span>              <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NameNotFoundException(packageName);
+<span class="hljs-number">242</span>          }
+<span class="hljs-number">243</span>          <span class="hljs-keyword">return</span> pi;
+<span class="hljs-number">244</span>      }
+</code></pre>
+<p><strong>ApplicationPackageManager.updateFlagsForPackage(int flags, int userId)</strong></p>
+<pre><code class="lang-java"><span class="hljs-number">1829</span>      <span class="hljs-comment">/**
+1830       * Update given flags when being used to request {<span class="hljs-doctag">@link</span> PackageInfo}.
+1831       */</span>
+<span class="hljs-number">1832</span>      <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">updateFlagsForPackage</span><span class="hljs-params">(<span class="hljs-keyword">int</span> flags, <span class="hljs-keyword">int</span> userId)</span> </span>{
+<span class="hljs-number">1833</span>          <span class="hljs-keyword">if</span> ((flags &amp; (GET_ACTIVITIES | GET_RECEIVERS | GET_SERVICES | GET_PROVIDERS)) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">1834</span>              <span class="hljs-comment">// Caller is asking for component details, so they&apos;d better be</span>
+<span class="hljs-number">1835</span>              <span class="hljs-comment">// asking for specific Direct Boot matching behavior</span>
+<span class="hljs-number">1836</span>              <span class="hljs-keyword">if</span> ((flags &amp; (MATCH_DIRECT_BOOT_UNAWARE
+<span class="hljs-number">1837</span>                      | MATCH_DIRECT_BOOT_AWARE
+<span class="hljs-number">1838</span>                      | MATCH_DIRECT_BOOT_AUTO)) == <span class="hljs-number">0</span>) {
+<span class="hljs-number">1839</span>                  onImplicitDirectBoot(userId);
+<span class="hljs-number">1840</span>              }
+<span class="hljs-number">1841</span>          }
+<span class="hljs-number">1842</span>          <span class="hljs-keyword">return</span> flags;
+<span class="hljs-number">1843</span>      }
+</code></pre>
+<p>From the source code reading of the above aspects, it can also be inferred that when the flag is 0, no additional information about the four major components is obtained.</p>
+<p>The handling of flags exists in various places within the Android system, but all are based on bitwise AND operations. We can conclude that as long as the flags passed in are 0, the flags used when finally obtaining <code>PackageInfo</code> will also be 0.</p>
+<h1 id="obtaining-packageinfo">Obtaining PackageInfo</h1>
+<p>Regarding obtaining <code>PackageInfo</code>, Android 11 introduced a caching mechanism. There&apos;s an article that explains this change well: <a href="https://juejin.cn/post/7004708493634568200" target="_blank">https://juejin.cn/post/7004708493634568200</a></p>
+<p>Apart from the caching mechanism, obtaining <code>PackageInfo</code> can ultimately be traced to the <code>getPackageInfoAsUserUncached()</code> method in <code>PackageManager</code>.</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> PackageInfo <span class="hljs-title">getPackageInfoAsUserUncached</span><span class="hljs-params">(
+    String packageName, <span class="hljs-keyword">int</span> flags, <span class="hljs-keyword">int</span> userId)</span> </span>{
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">return</span> ActivityThread.getPackageManager().getPackageInfo(packageName, flags, userId);
+    } <span class="hljs-keyword">catch</span> (RemoteException e) {
+        <span class="hljs-keyword">throw</span> e.rethrowFromSystemServer();
+    }
+}
+</code></pre>
+<p>By reading the code of <code>ActivityThread</code>, it can be determined that <code>PackageInfo</code> is obtained through <code>IPackageManager</code> and is acquired by <code>PackageManagerService</code>.</p>
+<pre><code class="lang-java"><span class="hljs-number">2345</span>      <span class="hljs-meta">@UnsupportedAppUsage</span>
+<span class="hljs-number">2346</span>      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> IPackageManager <span class="hljs-title">getPackageManager</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-number">2347</span>          <span class="hljs-keyword">if</span> (sPackageManager != <span class="hljs-keyword">null</span>) {
+<span class="hljs-number">2348</span>              <span class="hljs-keyword">return</span> sPackageManager;
+<span class="hljs-number">2349</span>          }
+<span class="hljs-number">2350</span>          <span class="hljs-keyword">final</span> IBinder b = ServiceManager.getService(<span class="hljs-string">&quot;package&quot;</span>);
+<span class="hljs-number">2351</span>          sPackageManager = IPackageManager.Stub.asInterface(b);
+<span class="hljs-number">2352</span>          <span class="hljs-keyword">return</span> sPackageManager;
+<span class="hljs-number">2353</span>      }
+</code></pre>
+<p>And in <code>PackageManagerService</code>, the method responsible for obtaining <code>PackageInfo</code> can ultimately be traced to:</p>
+<pre><code class="lang-java"><span class="hljs-number">3400</span>          <span class="hljs-function"><span class="hljs-keyword">protected</span> PackageInfo <span class="hljs-title">getPackageInfoInternalBody</span><span class="hljs-params">(String packageName, <span class="hljs-keyword">long</span> versionCode,
+<span class="hljs-number">3401</span>                  <span class="hljs-keyword">int</span> flags, <span class="hljs-keyword">int</span> filterCallingUid, <span class="hljs-keyword">int</span> userId)</span> </span>{
+<span class="hljs-number">3402</span>              <span class="hljs-comment">// reader</span>
+<span class="hljs-number">3403</span>              <span class="hljs-comment">// Normalize package name to handle renamed packages and static libs</span>
+<span class="hljs-number">3404</span>              packageName = resolveInternalPackageNameLPr(packageName, versionCode);
+<span class="hljs-number">3405</span>  
+<span class="hljs-number">3406</span>              <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> matchFactoryOnly = (flags &amp; MATCH_FACTORY_ONLY) != <span class="hljs-number">0</span>;
+<span class="hljs-number">3407</span>              <span class="hljs-keyword">if</span> (matchFactoryOnly) { <span class="hljs-comment">//[When flags=0, it doesn&apos;t enter here.]</span>
+<span class="hljs-number">3408</span>                  <span class="hljs-comment">// Instant app filtering for APEX modules is ignored</span>
+<span class="hljs-number">3409</span>                  <span class="hljs-keyword">if</span> ((flags &amp; MATCH_APEX) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">3410</span>                      <span class="hljs-keyword">return</span> mApexManager.getPackageInfo(packageName,
+<span class="hljs-number">3411</span>                              ApexManager.MATCH_FACTORY_PACKAGE);
+<span class="hljs-number">3412</span>                  }
+<span class="hljs-number">3413</span>                  <span class="hljs-keyword">final</span> PackageSetting ps = mSettings.getDisabledSystemPkgLPr(packageName);
+<span class="hljs-number">3414</span>                  <span class="hljs-keyword">if</span> (ps != <span class="hljs-keyword">null</span>) {
+<span class="hljs-number">3415</span>                      <span class="hljs-keyword">if</span> (filterSharedLibPackageLPr(ps, filterCallingUid, userId, flags)) {
+<span class="hljs-number">3416</span>                          <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+<span class="hljs-number">3417</span>                      }
+<span class="hljs-number">3418</span>                      <span class="hljs-keyword">if</span> (shouldFilterApplicationLocked(ps, filterCallingUid, userId)) {
+<span class="hljs-number">3419</span>                          <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+<span class="hljs-number">3420</span>                      }
+<span class="hljs-number">3421</span>                      <span class="hljs-keyword">return</span> generatePackageInfo(ps, flags, userId);
+<span class="hljs-number">3422</span>                  }
+<span class="hljs-number">3423</span>              }
+<span class="hljs-number">3424</span>  
+<span class="hljs-number">3425</span>              AndroidPackage p = mPackages.get(packageName);
+<span class="hljs-number">3426</span>              <span class="hljs-keyword">if</span> (matchFactoryOnly &amp;&amp; p != <span class="hljs-keyword">null</span> &amp;&amp; !p.isSystem()) {
+<span class="hljs-number">3427</span>                  <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+<span class="hljs-number">3428</span>              }
+<span class="hljs-number">3429</span>              <span class="hljs-keyword">if</span> (DEBUG_PACKAGE_INFO)
+<span class="hljs-number">3430</span>                  Log.v(TAG, <span class="hljs-string">&quot;getPackageInfo &quot;</span> + packageName + <span class="hljs-string">&quot;: &quot;</span> + p);
+<span class="hljs-number">3431</span>              <span class="hljs-keyword">if</span> (p != <span class="hljs-keyword">null</span>) { 
+<span class="hljs-number">3432</span>                  <span class="hljs-keyword">final</span> PackageSetting ps = getPackageSetting(p.getPackageName());
+                    <span class="hljs-comment">// [the flags will be passed in this block]</span>
+<span class="hljs-number">3433</span>                  <span class="hljs-keyword">if</span> (filterSharedLibPackageLPr(ps, filterCallingUid, userId, flags)) {  
+<span class="hljs-number">3434</span>                      <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+<span class="hljs-number">3435</span>                  }
+<span class="hljs-number">3436</span>                  <span class="hljs-keyword">if</span> (ps != <span class="hljs-keyword">null</span> &amp;&amp; shouldFilterApplicationLocked(ps, filterCallingUid, userId)) {
+<span class="hljs-number">3437</span>                      <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+<span class="hljs-number">3438</span>                  }
+<span class="hljs-number">3439</span>  
+                    <span class="hljs-comment">// [the flags will be passed in this block]</span>
+<span class="hljs-number">3440</span>                  <span class="hljs-keyword">return</span> generatePackageInfo(ps, flags, userId);
+<span class="hljs-number">3441</span>              }
+                    <span class="hljs-comment">// [This part is not entered when the package is found, only consider the method mentioned above for locating.]</span>
+<span class="hljs-number">3442</span>              <span class="hljs-keyword">if</span> (!matchFactoryOnly &amp;&amp; (flags &amp; MATCH_KNOWN_PACKAGES) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">3443</span>                  <span class="hljs-keyword">final</span> PackageSetting ps = mSettings.getPackageLPr(packageName);
+<span class="hljs-number">3444</span>                  <span class="hljs-keyword">if</span> (ps == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+<span class="hljs-number">3445</span>                  <span class="hljs-keyword">if</span> (filterSharedLibPackageLPr(ps, filterCallingUid, userId, flags)) {
+<span class="hljs-number">3446</span>                      <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+<span class="hljs-number">3447</span>                  }
+<span class="hljs-number">3448</span>                  <span class="hljs-keyword">if</span> (shouldFilterApplicationLocked(ps, filterCallingUid, userId)) {
+<span class="hljs-number">3449</span>                      <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+<span class="hljs-number">3450</span>                  }
+<span class="hljs-number">3451</span>                  <span class="hljs-keyword">return</span> generatePackageInfo(ps, flags, userId);
+<span class="hljs-number">3452</span>              }
+<span class="hljs-number">3453</span>              <span class="hljs-keyword">if</span> ((flags &amp; MATCH_APEX) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">3454</span>                  <span class="hljs-keyword">return</span> mApexManager.getPackageInfo(packageName, ApexManager.MATCH_ACTIVE_PACKAGE);
+<span class="hljs-number">3455</span>              }
+<span class="hljs-number">3456</span>              <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+<span class="hljs-number">3457</span>          }
+</code></pre>
+<p><code>filterSharedLibPackageLPr</code> is merely a judgment method, and its method comment is: &quot;Callers can access only the libs they depend on, otherwise they need to explicitly ask for the shared libraries given the caller is allowed to access all static libs.&quot;</p>
+<p>The understanding of this is an access control mechanism. Without permission, access to shared libraries is not allowed, and the <code>getPackageInfoInternalBody</code> method will ultimately return a null value.</p>
+<p>When this permission control mechanism is passed by default, it will ultimately enter the <code>generatePackageInfo(ps, flags, userId)</code> method.</p>
+<pre><code class="lang-java">    <span class="hljs-function"><span class="hljs-keyword">private</span> PackageInfo <span class="hljs-title">generatePackageInfo</span><span class="hljs-params">(PackageSetting ps, <span class="hljs-keyword">int</span> flags, <span class="hljs-keyword">int</span> userId)</span> </span>{
+        <span class="hljs-keyword">if</span> (!mUserManager.exists(userId)) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        <span class="hljs-keyword">if</span> (ps == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        }
+        <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> callingUid = Binder.getCallingUid();
+        <span class="hljs-comment">// Filter out ephemeral app metadata:</span>
+        <span class="hljs-comment">//   * The system/shell/root can see metadata for any app</span>
+        <span class="hljs-comment">//   * An installed app can see metadata for 1) other installed apps</span>
+        <span class="hljs-comment">//     and 2) ephemeral apps that have explicitly interacted with it</span>
+        <span class="hljs-comment">//   * Ephemeral apps can only see their own data and exposed installed apps</span>
+        <span class="hljs-comment">//   * Holding a signature permission allows seeing instant apps</span>
+        <span class="hljs-keyword">if</span> (shouldFilterApplicationLocked(ps, callingUid, userId)) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        }
+
+        <span class="hljs-comment">// [When flags are 0, it won&apos;t enter the following section.]</span>
+        <span class="hljs-keyword">if</span> ((flags &amp; MATCH_UNINSTALLED_PACKAGES) != <span class="hljs-number">0</span>
+                &amp;&amp; ps.isSystem()) {
+            flags |= MATCH_ANY_USER;
+        }
+
+        <span class="hljs-keyword">final</span> PackageUserState state = ps.readUserState(userId);
+        AndroidPackage p = ps.pkg;
+        <span class="hljs-keyword">if</span> (p != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">final</span> PermissionsState permissionsState = ps.getPermissionsState();
+
+            <span class="hljs-comment">// [When flags are 0, the GID information will not be retrieved.]</span>
+            <span class="hljs-comment">// Compute GIDs only if requested</span>
+            <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span>[] gids = (flags &amp; PackageManager.GET_GIDS) == <span class="hljs-number">0</span>
+                    ? EMPTY_INT_ARRAY : permissionsState.computeGids(userId);
+            <span class="hljs-comment">// Compute granted permissions only if package has requested permissions</span>
+            Set&lt;String&gt; permissions = ArrayUtils.isEmpty(p.getRequestedPermissions())
+                    ? Collections.emptySet() : permissionsState.getPermissions(userId);
+            <span class="hljs-keyword">if</span> (state.instantApp) {
+                permissions = <span class="hljs-keyword">new</span> ArraySet&lt;&gt;(permissions);
+                permissions.removeIf(permissionName -&gt; {
+                    BasePermission permission = mPermissionManager.getPermissionTEMP(
+                            permissionName);
+                    <span class="hljs-keyword">if</span> (permission == <span class="hljs-keyword">null</span>) {
+                        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+                    }
+                    <span class="hljs-keyword">if</span> (!permission.isInstant()) {
+                        EventLog.writeEvent(<span class="hljs-number">0x534e4554</span>, <span class="hljs-string">&quot;140256621&quot;</span>, UserHandle.getUid(userId,
+                                ps.appId), permissionName);
+                        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+                    }
+                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+                });
+            }
+
+            <span class="hljs-comment">// [the flags will be passed in this block]</span>
+            PackageInfo packageInfo = PackageInfoUtils.generate(p, gids, flags,
+                    ps.firstInstallTime, ps.lastUpdateTime, permissions, state, userId, ps);
+
+            <span class="hljs-keyword">if</span> (packageInfo == <span class="hljs-keyword">null</span>) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+            }
+
+            packageInfo.packageName = packageInfo.applicationInfo.packageName =
+                    resolveExternalPackageNameLPr(p);
+
+            <span class="hljs-keyword">return</span> packageInfo;
+
+            <span class="hljs-comment">// [When PackageInfo is found, it won&apos;t enter the following section.]</span>
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ((flags &amp; MATCH_UNINSTALLED_PACKAGES) != <span class="hljs-number">0</span> &amp;&amp; state.isAvailable(flags)) {
+            PackageInfo pi = <span class="hljs-keyword">new</span> PackageInfo();
+            pi.packageName = ps.name;
+            pi.setLongVersionCode(ps.versionCode);
+            pi.sharedUserId = (ps.sharedUser != <span class="hljs-keyword">null</span>) ? ps.sharedUser.name : <span class="hljs-keyword">null</span>;
+            pi.firstInstallTime = ps.firstInstallTime;
+            pi.lastUpdateTime = ps.lastUpdateTime;
+
+            ApplicationInfo ai = <span class="hljs-keyword">new</span> ApplicationInfo();
+            ai.packageName = ps.name;
+            ai.uid = UserHandle.getUid(userId, ps.appId);
+            ai.primaryCpuAbi = ps.primaryCpuAbiString;
+            ai.secondaryCpuAbi = ps.secondaryCpuAbiString;
+            ai.setVersionCode(ps.versionCode);
+            ai.flags = ps.pkgFlags;
+            ai.privateFlags = ps.pkgPrivateFlags;
+            pi.applicationInfo = PackageParser.generateApplicationInfo(ai, flags, state, userId);
+
+            <span class="hljs-keyword">if</span> (DEBUG_PACKAGE_INFO) Log.v(TAG, <span class="hljs-string">&quot;ps.pkg is n/a for [&quot;</span>
+                    + ps.name + <span class="hljs-string">&quot;]. Provides a minimum info.&quot;</span>);
+            <span class="hljs-keyword">return</span> pi;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        }
+    }
+</code></pre>
+<p>Reading <code>PackageInfoUtils</code> will provide the final conclusion.</p>
+<pre><code class="lang-java"><span class="hljs-number">81</span>      <span class="hljs-comment">/**
+82       * <span class="hljs-doctag">@param</span> pkgSetting See {<span class="hljs-doctag">@link</span> PackageInfoUtils} for description of pkgSetting usage.
+83       */</span>
+<span class="hljs-number">84</span>      <span class="hljs-meta">@Nullable</span>
+<span class="hljs-number">85</span>      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> PackageInfo <span class="hljs-title">generate</span><span class="hljs-params">(AndroidPackage pkg, <span class="hljs-keyword">int</span>[] gids,
+<span class="hljs-number">86</span>              @PackageManager.PackageInfoFlags <span class="hljs-keyword">int</span> flags, <span class="hljs-keyword">long</span> firstInstallTime, <span class="hljs-keyword">long</span> lastUpdateTime,
+<span class="hljs-number">87</span>              Set&lt;String&gt; grantedPermissions, PackageUserState state, <span class="hljs-keyword">int</span> userId,
+<span class="hljs-number">88</span>              @Nullable PackageSetting pkgSetting)</span> </span>{
+<span class="hljs-number">89</span>          <span class="hljs-keyword">return</span> generateWithComponents(pkg, gids, flags, firstInstallTime, lastUpdateTime,
+<span class="hljs-number">90</span>                  grantedPermissions, state, userId, <span class="hljs-keyword">null</span>, pkgSetting);
+<span class="hljs-number">91</span>      }
+<span class="hljs-number">92</span>  
+<span class="hljs-number">93</span>      <span class="hljs-comment">/**
+94       * <span class="hljs-doctag">@param</span> pkgSetting See {<span class="hljs-doctag">@link</span> PackageInfoUtils} for description of pkgSetting usage.
+95       */</span>
+<span class="hljs-number">96</span>      <span class="hljs-meta">@Nullable</span>
+<span class="hljs-number">97</span>      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> PackageInfo <span class="hljs-title">generate</span><span class="hljs-params">(AndroidPackage pkg, ApexInfo apexInfo, <span class="hljs-keyword">int</span> flags,
+<span class="hljs-number">98</span>              @Nullable PackageSetting pkgSetting)</span> </span>{
+<span class="hljs-number">99</span>          <span class="hljs-keyword">return</span> generateWithComponents(pkg, EmptyArray.INT, flags, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, Collections.emptySet(),
+<span class="hljs-number">100</span>                  <span class="hljs-keyword">new</span> PackageUserState(), UserHandle.getCallingUserId(), apexInfo, pkgSetting);
+<span class="hljs-number">101</span>      }
+<span class="hljs-number">102</span>  
+<span class="hljs-number">103</span>      <span class="hljs-comment">/**
+104       * <span class="hljs-doctag">@param</span> pkgSetting See {<span class="hljs-doctag">@link</span> PackageInfoUtils} for description of pkgSetting usage.
+105       */</span>
+<span class="hljs-number">106</span>      <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> PackageInfo <span class="hljs-title">generateWithComponents</span><span class="hljs-params">(AndroidPackage pkg, <span class="hljs-keyword">int</span>[] gids,
+<span class="hljs-number">107</span>              @PackageManager.PackageInfoFlags <span class="hljs-keyword">int</span> flags, <span class="hljs-keyword">long</span> firstInstallTime, <span class="hljs-keyword">long</span> lastUpdateTime,
+<span class="hljs-number">108</span>              Set&lt;String&gt; grantedPermissions, PackageUserState state, <span class="hljs-keyword">int</span> userId,
+<span class="hljs-number">109</span>              @Nullable ApexInfo apexInfo, @Nullable PackageSetting pkgSetting)</span> </span>{
+<span class="hljs-number">110</span>          ApplicationInfo applicationInfo = generateApplicationInfo(pkg, flags, state, userId,
+<span class="hljs-number">111</span>                  pkgSetting);
+<span class="hljs-number">112</span>          <span class="hljs-keyword">if</span> (applicationInfo == <span class="hljs-keyword">null</span>) {
+<span class="hljs-number">113</span>              <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+<span class="hljs-number">114</span>          }
+<span class="hljs-number">115</span>  
+            <span class="hljs-comment">// [Here, the flags will be passed on.]</span>
+<span class="hljs-number">116</span>          PackageInfo info = PackageInfoWithoutStateUtils.generateWithoutComponentsUnchecked(pkg,
+<span class="hljs-number">117</span>                  gids, flags, firstInstallTime, lastUpdateTime, grantedPermissions, state, userId,
+<span class="hljs-number">118</span>                  apexInfo, applicationInfo);
+<span class="hljs-number">119</span>  
+<span class="hljs-number">120</span>          info.isStub = pkg.isStub();
+<span class="hljs-number">121</span>          info.coreApp = pkg.isCoreApp();
+<span class="hljs-number">122</span>  
+            <span class="hljs-comment">// [When flags are 0, ACTIVITIES information will not be retrieved.]</span>
+<span class="hljs-number">123</span>          <span class="hljs-keyword">if</span> ((flags &amp; PackageManager.GET_ACTIVITIES) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">124</span>              <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> N = pkg.getActivities().size();
+<span class="hljs-number">125</span>              <span class="hljs-keyword">if</span> (N &gt; <span class="hljs-number">0</span>) {
+<span class="hljs-number">126</span>                  <span class="hljs-keyword">int</span> num = <span class="hljs-number">0</span>;
+<span class="hljs-number">127</span>                  <span class="hljs-keyword">final</span> ActivityInfo[] res = <span class="hljs-keyword">new</span> ActivityInfo[N];
+<span class="hljs-number">128</span>                  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++) {
+<span class="hljs-number">129</span>                      <span class="hljs-keyword">final</span> ParsedActivity a = pkg.getActivities().get(i);
+<span class="hljs-number">130</span>                      <span class="hljs-keyword">if</span> (ComponentParseUtils.isMatch(state, pkg.isSystem(), pkg.isEnabled(), a,
+<span class="hljs-number">131</span>                              flags)) {
+<span class="hljs-number">132</span>                          <span class="hljs-keyword">if</span> (PackageManager.APP_DETAILS_ACTIVITY_CLASS_NAME.equals(
+<span class="hljs-number">133</span>                                  a.getName())) {
+<span class="hljs-number">134</span>                              <span class="hljs-keyword">continue</span>;
+<span class="hljs-number">135</span>                          }
+<span class="hljs-number">136</span>                          res[num++] = generateActivityInfo(pkg, a, flags, state,
+<span class="hljs-number">137</span>                                  applicationInfo, userId, pkgSetting);
+<span class="hljs-number">138</span>                      }
+<span class="hljs-number">139</span>                  }
+<span class="hljs-number">140</span>                  info.activities = ArrayUtils.trimToSize(res, num);
+<span class="hljs-number">141</span>              }
+<span class="hljs-number">142</span>          }
+            <span class="hljs-comment">// [When flags are 0, RECEIVERS information will not be retrieved.]</span>
+<span class="hljs-number">143</span>          <span class="hljs-keyword">if</span> ((flags &amp; PackageManager.GET_RECEIVERS) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">144</span>              <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> size = pkg.getReceivers().size();
+<span class="hljs-number">145</span>              <span class="hljs-keyword">if</span> (size &gt; <span class="hljs-number">0</span>) {
+<span class="hljs-number">146</span>                  <span class="hljs-keyword">int</span> num = <span class="hljs-number">0</span>;
+<span class="hljs-number">147</span>                  <span class="hljs-keyword">final</span> ActivityInfo[] res = <span class="hljs-keyword">new</span> ActivityInfo[size];
+<span class="hljs-number">148</span>                  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++) {
+<span class="hljs-number">149</span>                      <span class="hljs-keyword">final</span> ParsedActivity a = pkg.getReceivers().get(i);
+<span class="hljs-number">150</span>                      <span class="hljs-keyword">if</span> (ComponentParseUtils.isMatch(state, pkg.isSystem(), pkg.isEnabled(), a,
+<span class="hljs-number">151</span>                              flags)) {
+<span class="hljs-number">152</span>                          res[num++] = generateActivityInfo(pkg, a, flags, state, applicationInfo,
+<span class="hljs-number">153</span>                                  userId, pkgSetting);
+<span class="hljs-number">154</span>                      }
+<span class="hljs-number">155</span>                  }
+<span class="hljs-number">156</span>                  info.receivers = ArrayUtils.trimToSize(res, num);
+<span class="hljs-number">157</span>              }
+<span class="hljs-number">158</span>          }
+            <span class="hljs-comment">// [When flags are 0, SERVICES information will not be retrieved.]</span>
+<span class="hljs-number">159</span>          <span class="hljs-keyword">if</span> ((flags &amp; PackageManager.GET_SERVICES) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">160</span>              <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> size = pkg.getServices().size();
+<span class="hljs-number">161</span>              <span class="hljs-keyword">if</span> (size &gt; <span class="hljs-number">0</span>) {
+<span class="hljs-number">162</span>                  <span class="hljs-keyword">int</span> num = <span class="hljs-number">0</span>;
+<span class="hljs-number">163</span>                  <span class="hljs-keyword">final</span> ServiceInfo[] res = <span class="hljs-keyword">new</span> ServiceInfo[size];
+<span class="hljs-number">164</span>                  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++) {
+<span class="hljs-number">165</span>                      <span class="hljs-keyword">final</span> ParsedService s = pkg.getServices().get(i);
+<span class="hljs-number">166</span>                      <span class="hljs-keyword">if</span> (ComponentParseUtils.isMatch(state, pkg.isSystem(), pkg.isEnabled(), s,
+<span class="hljs-number">167</span>                              flags)) {
+<span class="hljs-number">168</span>                          res[num++] = generateServiceInfo(pkg, s, flags, state, applicationInfo,
+<span class="hljs-number">169</span>                                  userId, pkgSetting);
+<span class="hljs-number">170</span>                      }
+<span class="hljs-number">171</span>                  }
+<span class="hljs-number">172</span>                  info.services = ArrayUtils.trimToSize(res, num);
+<span class="hljs-number">173</span>              }
+<span class="hljs-number">174</span>          }
+            <span class="hljs-comment">// [When flags are 0, PROVIDERS information will not be retrieved.]</span>
+<span class="hljs-number">175</span>          <span class="hljs-keyword">if</span> ((flags &amp; PackageManager.GET_PROVIDERS) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">176</span>              <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> size = pkg.getProviders().size();
+<span class="hljs-number">177</span>              <span class="hljs-keyword">if</span> (size &gt; <span class="hljs-number">0</span>) {
+<span class="hljs-number">178</span>                  <span class="hljs-keyword">int</span> num = <span class="hljs-number">0</span>;
+<span class="hljs-number">179</span>                  <span class="hljs-keyword">final</span> ProviderInfo[] res = <span class="hljs-keyword">new</span> ProviderInfo[size];
+<span class="hljs-number">180</span>                  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++) {
+<span class="hljs-number">181</span>                      <span class="hljs-keyword">final</span> ParsedProvider pr = pkg.getProviders()
+<span class="hljs-number">182</span>                              .get(i);
+<span class="hljs-number">183</span>                      <span class="hljs-keyword">if</span> (ComponentParseUtils.isMatch(state, pkg.isSystem(), pkg.isEnabled(), pr,
+<span class="hljs-number">184</span>                              flags)) {
+<span class="hljs-number">185</span>                          res[num++] = generateProviderInfo(pkg, pr, flags, state, applicationInfo,
+<span class="hljs-number">186</span>                                  userId, pkgSetting);
+<span class="hljs-number">187</span>                      }
+<span class="hljs-number">188</span>                  }
+<span class="hljs-number">189</span>                  info.providers = ArrayUtils.trimToSize(res, num);
+<span class="hljs-number">190</span>              }
+<span class="hljs-number">191</span>          }
+            <span class="hljs-comment">// [When flags are 0, INSTRUMENTATION information will not be retrieved.]</span>
+<span class="hljs-number">192</span>          <span class="hljs-keyword">if</span> ((flags &amp; PackageManager.GET_INSTRUMENTATION) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">193</span>              <span class="hljs-keyword">int</span> N = pkg.getInstrumentations().size();
+<span class="hljs-number">194</span>              <span class="hljs-keyword">if</span> (N &gt; <span class="hljs-number">0</span>) {
+<span class="hljs-number">195</span>                  info.instrumentation = <span class="hljs-keyword">new</span> InstrumentationInfo[N];
+<span class="hljs-number">196</span>                  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++) {
+<span class="hljs-number">197</span>                      info.instrumentation[i] = generateInstrumentationInfo(
+<span class="hljs-number">198</span>                              pkg.getInstrumentations().get(i), pkg, flags, userId, pkgSetting);
+<span class="hljs-number">199</span>                  }
+<span class="hljs-number">200</span>              }
+<span class="hljs-number">201</span>          }
+<span class="hljs-number">202</span>  
+<span class="hljs-number">203</span>          <span class="hljs-keyword">return</span> info;
+<span class="hljs-number">204</span>      }
+<span class="hljs-number">205</span>
+</code></pre>
+<p>Here&apos;s the source code of PackageInfoWithoutStateUtils.generateWithoutComponentsUnchecked() </p>
+<pre><code class="lang-java">
+<span class="hljs-number">201</span>      <span class="hljs-comment">/**
+202       * This bypasses critical checks that are necessary for usage with data passed outside of
+203       * system server.
+204       *
+205       * Prefer {<span class="hljs-doctag">@link</span> #generateWithoutComponents(ParsingPackageRead, int[], int, long, long, Set,
+206       * PackageUserState, int, ApexInfo, ApplicationInfo)}.
+207       */</span>
+<span class="hljs-number">208</span>      <span class="hljs-meta">@NonNull</span>
+<span class="hljs-number">209</span>      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> PackageInfo <span class="hljs-title">generateWithoutComponentsUnchecked</span><span class="hljs-params">(ParsingPackageRead pkg, <span class="hljs-keyword">int</span>[] gids,
+<span class="hljs-number">210</span>              @PackageManager.PackageInfoFlags <span class="hljs-keyword">int</span> flags, <span class="hljs-keyword">long</span> firstInstallTime, <span class="hljs-keyword">long</span> lastUpdateTime,
+<span class="hljs-number">211</span>              Set&lt;String&gt; grantedPermissions, PackageUserState state, <span class="hljs-keyword">int</span> userId,
+<span class="hljs-number">212</span>              @Nullable ApexInfo apexInfo, @NonNull ApplicationInfo applicationInfo)</span> </span>{
+<span class="hljs-number">213</span>          PackageInfo pi = <span class="hljs-keyword">new</span> PackageInfo();
+<span class="hljs-number">214</span>          pi.packageName = pkg.getPackageName();
+<span class="hljs-number">215</span>          pi.splitNames = pkg.getSplitNames();
+<span class="hljs-number">216</span>          pi.versionCode = pkg.getVersionCode();
+<span class="hljs-number">217</span>          pi.versionCodeMajor = pkg.getVersionCodeMajor();
+<span class="hljs-number">218</span>          pi.baseRevisionCode = pkg.getBaseRevisionCode();
+<span class="hljs-number">219</span>          pi.splitRevisionCodes = pkg.getSplitRevisionCodes();
+<span class="hljs-number">220</span>          pi.versionName = pkg.getVersionName();
+<span class="hljs-number">221</span>          pi.sharedUserId = pkg.getSharedUserId();
+<span class="hljs-number">222</span>          pi.sharedUserLabel = pkg.getSharedUserLabel();
+<span class="hljs-number">223</span>          pi.applicationInfo = applicationInfo;
+<span class="hljs-number">224</span>          pi.installLocation = pkg.getInstallLocation();
+<span class="hljs-number">225</span>          <span class="hljs-keyword">if</span> ((pi.applicationInfo.flags &amp; ApplicationInfo.FLAG_SYSTEM) != <span class="hljs-number">0</span>
+<span class="hljs-number">226</span>                  || (pi.applicationInfo.flags &amp; ApplicationInfo.FLAG_UPDATED_SYSTEM_APP) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">227</span>              pi.requiredForAllUsers = pkg.isRequiredForAllUsers();
+<span class="hljs-number">228</span>          }
+<span class="hljs-number">229</span>          pi.restrictedAccountType = pkg.getRestrictedAccountType();
+<span class="hljs-number">230</span>          pi.requiredAccountType = pkg.getRequiredAccountType();
+<span class="hljs-number">231</span>          pi.overlayTarget = pkg.getOverlayTarget();
+<span class="hljs-number">232</span>          pi.targetOverlayableName = pkg.getOverlayTargetName();
+<span class="hljs-number">233</span>          pi.overlayCategory = pkg.getOverlayCategory();
+<span class="hljs-number">234</span>          pi.overlayPriority = pkg.getOverlayPriority();
+<span class="hljs-number">235</span>          pi.mOverlayIsStatic = pkg.isOverlayIsStatic();
+<span class="hljs-number">236</span>          pi.compileSdkVersion = pkg.getCompileSdkVersion();
+<span class="hljs-number">237</span>          pi.compileSdkVersionCodename = pkg.getCompileSdkVersionCodeName();
+<span class="hljs-number">238</span>          pi.firstInstallTime = firstInstallTime;
+<span class="hljs-number">239</span>          pi.lastUpdateTime = lastUpdateTime;
+            <span class="hljs-comment">// [When flags are 0, GIDS information will not be retrieved.]</span>
+<span class="hljs-number">240</span>          <span class="hljs-keyword">if</span> ((flags &amp; PackageManager.GET_GIDS) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">241</span>              pi.gids = gids;
+<span class="hljs-number">242</span>          }
+            <span class="hljs-comment">// [When flags are 0, CONFIGURATIONS information will not be retrieved.]</span>
+<span class="hljs-number">243</span>          <span class="hljs-keyword">if</span> ((flags &amp; PackageManager.GET_CONFIGURATIONS) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">244</span>              <span class="hljs-keyword">int</span> size = pkg.getConfigPreferences().size();
+<span class="hljs-number">245</span>              <span class="hljs-keyword">if</span> (size &gt; <span class="hljs-number">0</span>) {
+<span class="hljs-number">246</span>                  pi.configPreferences = <span class="hljs-keyword">new</span> ConfigurationInfo[size];
+<span class="hljs-number">247</span>                  pkg.getConfigPreferences().toArray(pi.configPreferences);
+<span class="hljs-number">248</span>              }
+<span class="hljs-number">249</span>              size = pkg.getReqFeatures().size();
+<span class="hljs-number">250</span>              <span class="hljs-keyword">if</span> (size &gt; <span class="hljs-number">0</span>) {
+<span class="hljs-number">251</span>                  pi.reqFeatures = <span class="hljs-keyword">new</span> FeatureInfo[size];
+<span class="hljs-number">252</span>                  pkg.getReqFeatures().toArray(pi.reqFeatures);
+<span class="hljs-number">253</span>              }
+<span class="hljs-number">254</span>              size = pkg.getFeatureGroups().size();
+<span class="hljs-number">255</span>              <span class="hljs-keyword">if</span> (size &gt; <span class="hljs-number">0</span>) {
+<span class="hljs-number">256</span>                  pi.featureGroups = <span class="hljs-keyword">new</span> FeatureGroupInfo[size];
+<span class="hljs-number">257</span>                  pkg.getFeatureGroups().toArray(pi.featureGroups);
+<span class="hljs-number">258</span>              }
+<span class="hljs-number">259</span>          }
+            <span class="hljs-comment">// [When flags are 0, PERMISSIONS information will not be retrieved.]</span>
+<span class="hljs-number">260</span>          <span class="hljs-keyword">if</span> ((flags &amp; PackageManager.GET_PERMISSIONS) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">261</span>              <span class="hljs-keyword">int</span> size = ArrayUtils.size(pkg.getPermissions());
+<span class="hljs-number">262</span>              <span class="hljs-keyword">if</span> (size &gt; <span class="hljs-number">0</span>) {
+<span class="hljs-number">263</span>                  pi.permissions = <span class="hljs-keyword">new</span> PermissionInfo[size];
+<span class="hljs-number">264</span>                  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++) {
+<span class="hljs-number">265</span>                      pi.permissions[i] = generatePermissionInfo(pkg.getPermissions().get(i),
+<span class="hljs-number">266</span>                              flags);
+<span class="hljs-number">267</span>                  }
+<span class="hljs-number">268</span>              }
+<span class="hljs-number">269</span>              <span class="hljs-keyword">final</span> List&lt;ParsedUsesPermission&gt; usesPermissions = pkg.getUsesPermissions();
+<span class="hljs-number">270</span>              size = usesPermissions.size();
+<span class="hljs-number">271</span>              <span class="hljs-keyword">if</span> (size &gt; <span class="hljs-number">0</span>) {
+<span class="hljs-number">272</span>                  pi.requestedPermissions = <span class="hljs-keyword">new</span> String[size];
+<span class="hljs-number">273</span>                  pi.requestedPermissionsFlags = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[size];
+<span class="hljs-number">274</span>                  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++) {
+<span class="hljs-number">275</span>                      <span class="hljs-keyword">final</span> ParsedUsesPermission usesPermission = usesPermissions.get(i);
+<span class="hljs-number">276</span>                      pi.requestedPermissions[i] = usesPermission.name;
+<span class="hljs-number">277</span>                      <span class="hljs-comment">// The notion of required permissions is deprecated but for compatibility.</span>
+<span class="hljs-number">278</span>                      pi.requestedPermissionsFlags[i] |=
+<span class="hljs-number">279</span>                              PackageInfo.REQUESTED_PERMISSION_REQUIRED;
+<span class="hljs-number">280</span>                      <span class="hljs-keyword">if</span> (grantedPermissions != <span class="hljs-keyword">null</span>
+<span class="hljs-number">281</span>                              &amp;&amp; grantedPermissions.contains(usesPermission.name)) {
+<span class="hljs-number">282</span>                          pi.requestedPermissionsFlags[i] |=
+<span class="hljs-number">283</span>                                  PackageInfo.REQUESTED_PERMISSION_GRANTED;
+<span class="hljs-number">284</span>                      }
+<span class="hljs-number">285</span>                      <span class="hljs-keyword">if</span> ((usesPermission.usesPermissionFlags
+<span class="hljs-number">286</span>                              &amp; ParsedUsesPermission.FLAG_NEVER_FOR_LOCATION) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">287</span>                          pi.requestedPermissionsFlags[i] |=
+<span class="hljs-number">288</span>                                  PackageInfo.REQUESTED_PERMISSION_NEVER_FOR_LOCATION;
+<span class="hljs-number">289</span>                      }
+<span class="hljs-number">290</span>                  }
+<span class="hljs-number">291</span>              }
+<span class="hljs-number">292</span>          }
+            <span class="hljs-comment">// [When flags are 0, ATTRIBUTIONS information will not be retrieved.]</span>
+<span class="hljs-number">293</span>          <span class="hljs-keyword">if</span> ((flags &amp; PackageManager.GET_ATTRIBUTIONS) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">294</span>              <span class="hljs-keyword">int</span> size = ArrayUtils.size(pkg.getAttributions());
+<span class="hljs-number">295</span>              <span class="hljs-keyword">if</span> (size &gt; <span class="hljs-number">0</span>) {
+<span class="hljs-number">296</span>                  pi.attributions = <span class="hljs-keyword">new</span> Attribution[size];
+<span class="hljs-number">297</span>                  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++) {
+<span class="hljs-number">298</span>                      pi.attributions[i] = generateAttribution(pkg.getAttributions().get(i));
+<span class="hljs-number">299</span>                  }
+<span class="hljs-number">300</span>              }
+<span class="hljs-number">301</span>              <span class="hljs-keyword">if</span> (pkg.areAttributionsUserVisible()) {
+<span class="hljs-number">302</span>                  pi.applicationInfo.privateFlagsExt
+<span class="hljs-number">303</span>                          |= ApplicationInfo.PRIVATE_FLAG_EXT_ATTRIBUTIONS_ARE_USER_VISIBLE;
+<span class="hljs-number">304</span>              } <span class="hljs-keyword">else</span> {
+<span class="hljs-number">305</span>                  pi.applicationInfo.privateFlagsExt
+<span class="hljs-number">306</span>                          &amp;= ~ApplicationInfo.PRIVATE_FLAG_EXT_ATTRIBUTIONS_ARE_USER_VISIBLE;
+<span class="hljs-number">307</span>              }
+<span class="hljs-number">308</span>          } <span class="hljs-keyword">else</span> {
+<span class="hljs-number">309</span>              pi.applicationInfo.privateFlagsExt
+<span class="hljs-number">310</span>                      &amp;= ~ApplicationInfo.PRIVATE_FLAG_EXT_ATTRIBUTIONS_ARE_USER_VISIBLE;
+<span class="hljs-number">311</span>          }
+<span class="hljs-number">312</span>  
+<span class="hljs-number">313</span>          <span class="hljs-keyword">if</span> (apexInfo != <span class="hljs-keyword">null</span>) {
+<span class="hljs-number">314</span>              File apexFile = <span class="hljs-keyword">new</span> File(apexInfo.modulePath);
+<span class="hljs-number">315</span>  
+<span class="hljs-number">316</span>              pi.applicationInfo.sourceDir = apexFile.getPath();
+<span class="hljs-number">317</span>              pi.applicationInfo.publicSourceDir = apexFile.getPath();
+<span class="hljs-number">318</span>              <span class="hljs-keyword">if</span> (apexInfo.isFactory) {
+<span class="hljs-number">319</span>                  pi.applicationInfo.flags |= ApplicationInfo.FLAG_SYSTEM;
+<span class="hljs-number">320</span>                  pi.applicationInfo.flags &amp;= ~ApplicationInfo.FLAG_UPDATED_SYSTEM_APP;
+<span class="hljs-number">321</span>              } <span class="hljs-keyword">else</span> {
+<span class="hljs-number">322</span>                  pi.applicationInfo.flags &amp;= ~ApplicationInfo.FLAG_SYSTEM;
+<span class="hljs-number">323</span>                  pi.applicationInfo.flags |= ApplicationInfo.FLAG_UPDATED_SYSTEM_APP;
+<span class="hljs-number">324</span>              }
+<span class="hljs-number">325</span>              <span class="hljs-keyword">if</span> (apexInfo.isActive) {
+<span class="hljs-number">326</span>                  pi.applicationInfo.flags |= ApplicationInfo.FLAG_INSTALLED;
+<span class="hljs-number">327</span>              } <span class="hljs-keyword">else</span> {
+<span class="hljs-number">328</span>                  pi.applicationInfo.flags &amp;= ~ApplicationInfo.FLAG_INSTALLED;
+<span class="hljs-number">329</span>              }
+<span class="hljs-number">330</span>              pi.isApex = <span class="hljs-keyword">true</span>;
+<span class="hljs-number">331</span>          }
+<span class="hljs-number">332</span>  
+<span class="hljs-number">333</span>          PackageParser.SigningDetails signingDetails = pkg.getSigningDetails();
+<span class="hljs-number">334</span>          <span class="hljs-comment">// deprecated method of getting signing certificates</span>
+            <span class="hljs-comment">// [When flags are 0, SIGNATURES information will not be retrieved.]</span>
+<span class="hljs-number">335</span>          <span class="hljs-keyword">if</span> ((flags &amp; PackageManager.GET_SIGNATURES) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">336</span>              <span class="hljs-keyword">if</span> (signingDetails.hasPastSigningCertificates()) {
+<span class="hljs-number">337</span>                  <span class="hljs-comment">// Package has included signing certificate rotation information.  Return the oldest</span>
+<span class="hljs-number">338</span>                  <span class="hljs-comment">// cert so that programmatic checks keep working even if unaware of key rotation.</span>
+<span class="hljs-number">339</span>                  pi.signatures = <span class="hljs-keyword">new</span> Signature[<span class="hljs-number">1</span>];
+<span class="hljs-number">340</span>                  pi.signatures[<span class="hljs-number">0</span>] = signingDetails.pastSigningCertificates[<span class="hljs-number">0</span>];
+<span class="hljs-number">341</span>              } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (signingDetails.hasSignatures()) {
+<span class="hljs-number">342</span>                  <span class="hljs-comment">// otherwise keep old behavior</span>
+<span class="hljs-number">343</span>                  <span class="hljs-keyword">int</span> numberOfSigs = signingDetails.signatures.length;
+<span class="hljs-number">344</span>                  pi.signatures = <span class="hljs-keyword">new</span> Signature[numberOfSigs];
+<span class="hljs-number">345</span>                  System.arraycopy(signingDetails.signatures, <span class="hljs-number">0</span>, pi.signatures, <span class="hljs-number">0</span>,
+<span class="hljs-number">346</span>                          numberOfSigs);
+<span class="hljs-number">347</span>              }
+<span class="hljs-number">348</span>          }
+<span class="hljs-number">349</span>  
+            <span class="hljs-comment">// [When flags are 0, SIGNING_CERTIFICATES information will not be retrieved.]</span>
+<span class="hljs-number">350</span>          <span class="hljs-comment">// replacement for GET_SIGNATURES</span>
+<span class="hljs-number">351</span>          <span class="hljs-keyword">if</span> ((flags &amp; PackageManager.GET_SIGNING_CERTIFICATES) != <span class="hljs-number">0</span>) {
+<span class="hljs-number">352</span>              <span class="hljs-keyword">if</span> (signingDetails != PackageParser.SigningDetails.UNKNOWN) {
+<span class="hljs-number">353</span>                  <span class="hljs-comment">// only return a valid SigningInfo if there is signing information to report</span>
+<span class="hljs-number">354</span>                  pi.signingInfo = <span class="hljs-keyword">new</span> SigningInfo(signingDetails);
+<span class="hljs-number">355</span>              } <span class="hljs-keyword">else</span> {
+<span class="hljs-number">356</span>                  pi.signingInfo = <span class="hljs-keyword">null</span>;
+<span class="hljs-number">357</span>              }
+<span class="hljs-number">358</span>          }
+<span class="hljs-number">359</span>  
+<span class="hljs-number">360</span>          <span class="hljs-keyword">return</span> pi;
+<span class="hljs-number">361</span>      }
+<span class="hljs-number">362</span>
+</code></pre>
+<h1 id="comments-in-the-packageinfo-source-code">Comments in the PackageInfo Source Code</h1>
+<p>The comments within the PackageInfo source code also indicate that when flags=0, certain information will not be retrieved.</p>
+<pre><code class="lang-java"><span class="hljs-number">25</span>  <span class="hljs-comment">/**
+26   * Overall information about the contents of a package.  This corresponds
+27   * to all of the information collected from AndroidManifest.xml.
+28   */</span>
+<span class="hljs-number">29</span>  <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PackageInfo</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Parcelable</span> </span>{
+    ...
+<span class="hljs-number">146</span>      <span class="hljs-comment">/**
+147       * All kernel group-IDs that have been assigned to this package.
+148       * This is only filled in if the flag {<span class="hljs-doctag">@link</span> PackageManager#GET_GIDS} was set.
+149       */</span>
+<span class="hljs-number">150</span>      <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] gids;
+<span class="hljs-number">151</span>  
+<span class="hljs-number">152</span>      <span class="hljs-comment">/**
+153       * Array of all {<span class="hljs-doctag">@link</span> android.R.styleable#AndroidManifestActivity
+154       * &amp;lt;activity&amp;gt;} tags included under &amp;lt;application&amp;gt;,
+155       * or null if there were none.  This is only filled in if the flag
+156       * {<span class="hljs-doctag">@link</span> PackageManager#GET_ACTIVITIES} was set.
+157       */</span>
+<span class="hljs-number">158</span>      <span class="hljs-keyword">public</span> ActivityInfo[] activities;
+<span class="hljs-number">159</span>  
+<span class="hljs-number">160</span>      <span class="hljs-comment">/**
+161       * Array of all {<span class="hljs-doctag">@link</span> android.R.styleable#AndroidManifestReceiver
+162       * &amp;lt;receiver&amp;gt;} tags included under &amp;lt;application&amp;gt;,
+163       * or null if there were none.  This is only filled in if the flag
+164       * {<span class="hljs-doctag">@link</span> PackageManager#GET_RECEIVERS} was set.
+165       */</span>
+<span class="hljs-number">166</span>      <span class="hljs-keyword">public</span> ActivityInfo[] receivers;
+<span class="hljs-number">167</span>  
+<span class="hljs-number">168</span>      <span class="hljs-comment">/**
+169       * Array of all {<span class="hljs-doctag">@link</span> android.R.styleable#AndroidManifestService
+170       * &amp;lt;service&amp;gt;} tags included under &amp;lt;application&amp;gt;,
+171       * or null if there were none.  This is only filled in if the flag
+172       * {<span class="hljs-doctag">@link</span> PackageManager#GET_SERVICES} was set.
+173       */</span>
+<span class="hljs-number">174</span>      <span class="hljs-keyword">public</span> ServiceInfo[] services;
+<span class="hljs-number">175</span>  
+<span class="hljs-number">176</span>      <span class="hljs-comment">/**
+177       * Array of all {<span class="hljs-doctag">@link</span> android.R.styleable#AndroidManifestProvider
+178       * &amp;lt;provider&amp;gt;} tags included under &amp;lt;application&amp;gt;,
+179       * or null if there were none.  This is only filled in if the flag
+180       * {<span class="hljs-doctag">@link</span> PackageManager#GET_PROVIDERS} was set.
+181       */</span>
+<span class="hljs-number">182</span>      <span class="hljs-keyword">public</span> ProviderInfo[] providers;
+<span class="hljs-number">183</span>  
+<span class="hljs-number">184</span>      <span class="hljs-comment">/**
+185       * Array of all {<span class="hljs-doctag">@link</span> android.R.styleable#AndroidManifestInstrumentation
+186       * &amp;lt;instrumentation&amp;gt;} tags included under &amp;lt;manifest&amp;gt;,
+187       * or null if there were none.  This is only filled in if the flag
+188       * {<span class="hljs-doctag">@link</span> PackageManager#GET_INSTRUMENTATION} was set.
+189       */</span>
+<span class="hljs-number">190</span>      <span class="hljs-keyword">public</span> InstrumentationInfo[] instrumentation;
+<span class="hljs-number">191</span>  
+<span class="hljs-number">192</span>      <span class="hljs-comment">/**
+193       * Array of all {<span class="hljs-doctag">@link</span> android.R.styleable#AndroidManifestPermission
+194       * &amp;lt;permission&amp;gt;} tags included under &amp;lt;manifest&amp;gt;,
+195       * or null if there were none.  This is only filled in if the flag
+196       * {<span class="hljs-doctag">@link</span> PackageManager#GET_PERMISSIONS} was set.
+197       */</span>
+<span class="hljs-number">198</span>      <span class="hljs-keyword">public</span> PermissionInfo[] permissions;
+<span class="hljs-number">199</span>  
+<span class="hljs-number">200</span>      <span class="hljs-comment">/**
+201       * Array of all {<span class="hljs-doctag">@link</span> android.R.styleable#AndroidManifestUsesPermission
+202       * &amp;lt;uses-permission&amp;gt;} tags included under &amp;lt;manifest&amp;gt;,
+203       * or null if there were none.  This is only filled in if the flag
+204       * {<span class="hljs-doctag">@link</span> PackageManager#GET_PERMISSIONS} was set.  This list includes
+205       * all permissions requested, even those that were not granted or known
+206       * by the system at install time.
+207       */</span>
+<span class="hljs-number">208</span>      <span class="hljs-keyword">public</span> String[] requestedPermissions;
+<span class="hljs-number">209</span>  
+<span class="hljs-number">210</span>      <span class="hljs-comment">/**
+211       * Array of flags of all {<span class="hljs-doctag">@link</span> android.R.styleable#AndroidManifestUsesPermission
+212       * &amp;lt;uses-permission&amp;gt;} tags included under &amp;lt;manifest&amp;gt;,
+213       * or null if there were none.  This is only filled in if the flag
+214       * {<span class="hljs-doctag">@link</span> PackageManager#GET_PERMISSIONS} was set.  Each value matches
+215       * the corresponding entry in {<span class="hljs-doctag">@link</span> #requestedPermissions}, and will have
+216       * the flag {<span class="hljs-doctag">@link</span> #REQUESTED_PERMISSION_GRANTED} set as appropriate.
+217       */</span>
+<span class="hljs-number">218</span>      <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] requestedPermissionsFlags;
+<span class="hljs-number">219</span>  
+<span class="hljs-number">220</span>      <span class="hljs-comment">/**
+221       * Array of all {<span class="hljs-doctag">@link</span> android.R.styleable#AndroidManifestAttribution
+222       * &amp;lt;attribution&amp;gt;} tags included under &amp;lt;manifest&amp;gt;, or null if there were none. This
+223       * is only filled if the flag {<span class="hljs-doctag">@link</span> PackageManager#GET_ATTRIBUTIONS} was set.
+224       */</span>
+<span class="hljs-number">225</span>      <span class="hljs-meta">@SuppressWarnings</span>({<span class="hljs-string">&quot;ArrayReturn&quot;</span>, <span class="hljs-string">&quot;NullableCollection&quot;</span>})
+<span class="hljs-number">226</span>      <span class="hljs-keyword">public</span> <span class="hljs-meta">@Nullable</span> Attribution[] attributions;
+<span class="hljs-number">227</span>  
+<span class="hljs-number">253</span>      <span class="hljs-comment">/**
+254       * Array of all signatures read from the package file. This is only filled
+255       * in if the flag {<span class="hljs-doctag">@link</span> PackageManager#GET_SIGNATURES} was set. A package
+256       * must be signed with at least one certificate which is at position zero.
+257       * The package can be signed with additional certificates which appear as
+258       * subsequent entries.
+259       *
+260       * &lt;strong&gt;Note:&lt;/strong&gt; Signature ordering is not guaranteed to be
+261       * stable which means that a package signed with certificates A and B is
+262       * equivalent to being signed with certificates B and A. This means that
+263       * in case multiple signatures are reported you cannot assume the one at
+264       * the first position to be the same across updates.
+265       *
+266       * &lt;strong&gt;Deprecated&lt;/strong&gt; This has been replaced by the
+267       * {<span class="hljs-doctag">@link</span> PackageInfo#signingInfo} field, which takes into
+268       * account signing certificate rotation.  For backwards compatibility in
+269       * the event of signing certificate rotation, this will return the oldest
+270       * reported signing certificate, so that an application will appear to
+271       * callers as though no rotation occurred.
+272       *
+273       * <span class="hljs-doctag">@deprecated</span> use {<span class="hljs-doctag">@code</span> signingInfo} instead
+274       */</span>
+<span class="hljs-number">275</span>      <span class="hljs-meta">@Deprecated</span>
+<span class="hljs-number">276</span>      <span class="hljs-keyword">public</span> Signature[] signatures;
+<span class="hljs-number">277</span>  
+<span class="hljs-number">278</span>      <span class="hljs-comment">/**
+279       * Signing information read from the package file, potentially
+280       * including past signing certificates no longer used after signing
+281       * certificate rotation.  This is only filled in if
+282       * the flag {<span class="hljs-doctag">@link</span> PackageManager#GET_SIGNING_CERTIFICATES} was set.
+283       *
+284       * Use this field instead of the deprecated {<span class="hljs-doctag">@code</span> signatures} field.
+285       * See {<span class="hljs-doctag">@link</span> SigningInfo} for more information on its contents.
+286       */</span>
+<span class="hljs-number">287</span>      <span class="hljs-keyword">public</span> SigningInfo signingInfo;
+<span class="hljs-number">288</span>  
+<span class="hljs-number">289</span>      <span class="hljs-comment">/**
+290       * Application specified preferred configuration
+291       * {<span class="hljs-doctag">@link</span> android.R.styleable#AndroidManifestUsesConfiguration
+292       * &amp;lt;uses-configuration&amp;gt;} tags included under &amp;lt;manifest&amp;gt;,
+293       * or null if there were none. This is only filled in if the flag
+294       * {<span class="hljs-doctag">@link</span> PackageManager#GET_CONFIGURATIONS} was set.
+295       */</span>
+<span class="hljs-number">296</span>      <span class="hljs-keyword">public</span> ConfigurationInfo[] configPreferences;
+<span class="hljs-number">297</span>
+</code></pre>
+<h1 id="summary">Summary</h1>
+<p>When using <code>PackageManager.getPackageInfo(String packageName, int flags)</code>, passing in flags as 0 will not retrieve information about the four major components, permissions, gids, etc.</p>
+<p>You can refer to all flags starting with <code>PackageManager.GET_</code> to understand that excluding these flags will not fetch the corresponding information.</p>
+<p>To include multiple flags, you can use the following format:</p>
+<pre><code class="lang-java">PackageInfo info = packageManager.getPackageInfo(context.getPackageName(), PackageManager.GET_ACTIVITIES | PackageManager.GET_PERMISSIONS);
+</code></pre>
+<p>When passing flags=0, the basic information included in PackageInfo is:</p>
+<ul>
+<li>packageName</li>
+<li>versionCode</li>
+<li>applicationInfo</li>
+<li>firstInstallTime</li>
+<li>lastUpdateTime</li>
+<li>compileSdkVersion</li>
+<li>...</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: [source code reading]">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../中文/" class="navigation navigation-next " aria-label="Next page: 中文">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"What does passing 0 to packagemanager.getpackageinfo as a flag mean","level":"1.2.2.1","depth":3,"next":{"title":"中文","level":"1.3","depth":1,"path":"中文/README.md","ref":"中文/README.md","articles":[{"title":"【工程实践】","level":"1.3.1","depth":2,"path":"中文/【工程实践】/README.md","ref":"中文/【工程实践】/README.md","articles":[{"title":"搭建gitbook全流程及踩坑记录","level":"1.3.1.1","depth":3,"path":"中文/【工程实践】/搭建Gitbook全流程及踩坑记录.md","ref":"中文/【工程实践】/搭建Gitbook全流程及踩坑记录.md","articles":[]}]},{"title":"【源码阅读】","level":"1.3.2","depth":2,"path":"中文/【源码阅读】/README.md","ref":"中文/【源码阅读】/README.md","articles":[{"title":"Packagemanager.getpackageinfo()传入0作为flag意味着什么","level":"1.3.2.1","depth":3,"path":"中文/【源码阅读】/PackageManager.getPackageInfo(","ref":"中文/【源码阅读】/PackageManager.getPackageInfo(","articles":[]}]}]},"previous":{"title":"[source code reading]","level":"1.2.2","depth":2,"path":"English/[Source Code Reading]/README.md","ref":"English/[Source Code Reading]/README.md","articles":[{"title":"What does passing 0 to packagemanager.getpackageinfo as a flag mean","level":"1.2.2.1","depth":3,"path":"English/[Source Code Reading]/What does passing 0 to PackageManager.getPackageInfo as a Flag mean.md","ref":"English/[Source Code Reading]/What does passing 0 to PackageManager.getPackageInfo as a Flag mean.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"English/[Source Code Reading]/What does passing 0 to PackageManager.getPackageInfo as a Flag mean.md","mtime":"2024-04-12T08:58:42.044Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-12T09:43:36.830Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
