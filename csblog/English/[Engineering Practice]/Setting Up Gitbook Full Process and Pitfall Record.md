@@ -206,4 +206,3 @@ shellCopy codehttps://githubusername.github.io/reponame/subfoldername1
 https://githubusername.github.io/reponame/subfoldername2
 ```
 
-I haven't found a method yet to generate multiple gitbook websites under the same Github user.
