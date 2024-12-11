@@ -30,7 +30,7 @@ Java语言的软件开发工具包
 
 **JDK、JRE、JVM三者的关系**
 
-![img](java_imgs\clip_image002.gif)
+![img](java_imgs\4B43cogdCyy.gif)
 
 JRE = JVM + JavaSE标准类库
 
@@ -60,15 +60,15 @@ JavaEE Java企业版 Web程序
 
 ## 关键字表格
 
-![img](java_imgs\clip_image004.gif)
+![img](java_imgs\3G6ZVGig6QK.gif)
 
 ## 数据类型
 
-![img](java_imgs\clip_image006.gif)
+![img](java_imgs\EIDVjMqUAiJ.gif)
 
 ## 基本数据类型
 
-![img](java_imgs\clip_image008.gif)
+![img](java_imgs\HYF8RIGJA4u.gif)
 
 ## 进制表示
 
@@ -94,7 +94,7 @@ JavaEE Java企业版 Web程序
 
 ## 自动类型转换顺序
 
-![img](java_imgs\clip_image010.gif)
+![img](java_imgs\yhr1I5PYfge.gif)
 
 ## 常量
 
@@ -106,7 +106,7 @@ JavaEE Java企业版 Web程序
 
  同一级别，从左到右进行运算。
 
-![img](java_imgs\clip_image012.gif)
+![img](java_imgs\xrN5MgRlTcc.gif)
 
 # 关键字
 
@@ -363,7 +363,7 @@ System.out.println(n);
 
 列数可以省略，行数不能省略
 
-![img](java_imgs\clip_image014.gif)
+![img](java_imgs\MnFkCfhFNRL.gif)
 
 ## 方法
 
@@ -394,13 +394,13 @@ public void sum(int... n){}
 
 在栈中开辟一片新的空间，空间内没有内容
 
-![img](java_imgs\clip_image016.gif)
+![img](java_imgs\fRtRVKzjk9i.gif)
 
 ②实例化对象：new Cat()
 
 在堆中开辟一片新的空间，完成了相关的初始化操作
 
-![img](java_imgs\clip_image018.gif)
+![img](java_imgs\GeXG0sfU9fb.gif)
 
 ③Cat one = new Cat();
 
@@ -606,22 +606,6 @@ int temp=14; {     int .temp=12;     System.out.printlnC"我是普通代码块1�
 还有：
 元注解
 
-# 异常
-
-Throwable- Error/Exception
-
-Error：程序无法处理的错误，表示运行应用程序中较严重的问题：VirtualMachineError虚拟机错误、OutOfMemoryError内存溢出、ThreadDeath线程死锁
-
-Exception：程序本身可以处理的异常：Checked Exception检查异常、Unchecked Exception 非检查异常
-
-Unchecked Exception非检查异常：编译器不要求强制处理的异常：RuntimeException：NullPointerException空指针异常、ArrayIndexOutOfBoundsException数组下标越界异常、ArithmeticException算数异常、ClassCastException类型转换异常
-
-CheckedException：检查异常：IOException、SQLException
-
-1.try块后可接零个或多个catch块，如果没有catch块，则必须跟一个finally块
-
-2.throw抛出的只能够是可抛出类Throwable或者其子类的实例对象
-
 # 常用类
 
 ## Object类
@@ -815,35 +799,55 @@ hashCode的通用约定如下：
 
 ## 包装类
 
-![image-20220311083703567](java_imgs\image-20220311083703567.png)
+![image-20220311083703567](java_imgs\1OO9vltqlKl.png)
 
-![image-20220311083714605](java_imgs\image-20220311083714605.png)
+![image-20220311083714605](java_imgs\bmNvcSILh72.png)
 
 包装类对象的初始值为null
 
+# 字符串
+
 ## String
 
-![image-20220311083814534](java_imgs\image-20220311083814534.png)
+特点：
 
-![image-20220311084214891](java_imgs\image-20220311084214891.png)
+- **不可变性**：`String`对象是不可变的，一旦创建，其值就不能改变。如果需要对字符串进行修改，实际上会创建一个新的`String`对象。
+- **线程安全**：由于不可变性，`String`是线程安全的，可以在多个线程中安全使用而无需同步。
 
-![image-20220311084943601](java_imgs\image-20220311084943601.png)
+![image-20220311084214891](java_imgs\Zzf0gscWg1b.png)
 
-![image-20220311085002119](java_imgs\image-20220311085002119.png)
+## String的常用方法
 
-线程安全是对应多线程的，一般只用单线程，所以StringBuilder就够了
+![image-20220311083814534](java_imgs\vmU17g7mm3g.png)
 
 
 
-**isEmpty()方法**
+## StringBuffer
 
-String a = new String();
+特点：
 
-String b = ""
+- **可变性**：`StringBuffer`对象是可变的，可以对其内容进行修改而不创建新的对象。
+- **线程安全**：`StringBuffer`是同步的，所有方法都被` synchronized`修饰，所以它是线程安全的，但同步导致性能开销较大。
 
-String c = null
+## StringBuilder
 
-以上都会被判断为true
+特点：
+
+- **可变性**：`StringBuilder`与`StringBuffer`类似，都是可变的。
+- **非线程安全**：`StringBuilder`不是同步的，所以在单线程环境下性能比`StringBuffer`高。
+- **性能优越**：因为没有同步开销，`StringBuilder`在单线程操作字符串时比`StringBuffer`更快。
+
+## StringBuffer和StringBuilder的常用方法
+
+1. **append()**：添加字符串到末尾
+2. **insert()**：在指定位置插入字符串
+3. **replace()**：替换指定范围内的字符串
+4. **delete()**：删除指定范围内的字符
+5. **deleteCharAt()**：删除指定位置的字符
+6. **reverse()**：反转字符串
+7. **setCharAt()**：修改指定位置的字符
+8. **substring()**：获取子字符串
+9. **toString()**：转换为 `String`
 
 # 集合
 
@@ -855,9 +859,9 @@ String c = null
 - 需要进行数据的增删
 - 数据重复问题
 
-![image-20220311085230509](java_imgs\image-20220311085230509.png)
+![image-20220311085230509](java_imgs\VTtSWvxrlOr.png)
 
-![image-20220311085242080](java_imgs\image-20220311085242080.png)
+![image-20220311085242080](java_imgs\EJeH07hpUIX.png)
 
 ## List
 
@@ -917,303 +921,63 @@ List&ArrayList的区别https://www.geeksforgeeks.org/difference-between-list-and
 
 ## 迭代器Iterator
 
-![image-20220311085629631](java_imgs\image-20220311085629631.png)
+![image-20220311085629631](java_imgs\6AILi3CpjSQ.png)
 
-![image-20220311085642158](java_imgs\image-20220311085642158.png)
+![image-20220311085642158](java_imgs\bRPUIZ4wyYf.png)
 
-![image-20220311085652195](java_imgs\image-20220311085652195.png)
+![image-20220311085652195](java_imgs\ads2oV3PASp.png)
 
 ## 比较器Comparator
 
-![image-20220311085712671](java_imgs\image-20220311085712671.png)
+![image-20220311085712671](java_imgs\rXC2sw6KsoX.png)
 
-![image-20220311085727337](java_imgs\image-20220311085727337.png)
+![image-20220311085727337](java_imgs\ehqxq95Ps68.png)
 
-![image-20220311085736171](java_imgs\image-20220311085736171.png)
+![image-20220311085736171](java_imgs\JkkUgtiUdbQ.png)
 
-![image-20220311085746893](java_imgs\image-20220311085746893.png)
+![image-20220311085746893](java_imgs\EAUCiciiWUW.png)
 
-# 线程
 
-![image-20220311085835998](java_imgs\image-20220311085835998.png)
-
- 
-
-![clipboard.png](java_imgs\clip_image0011.gif)
-
- 
-
-![clipboard.png](java_imgs\clip_image0063.gif)
-
- 
-
-![clipboard.png](java_imgs\clip_imaddge008.gif)
-
-stop()现在在jdk中不推荐使用
-
- 
-
--join不写时间参数的话，会等调用join方法的线程执行完毕后执行其他的线程，如果写了时间，就会等调用join方法的线程执行那段时间后执行其他的线程
-
- 
-
-![clipboard.png](java_imgs\clip_image1010.gif)
-
- 
-
-数字越大优先级越高
-
- 
-
-![clipboard.png](java_imgs\clip_ima1ge012.gif)
-
- 
-
-![clipboard.png](java_imgs\clip_image2014.gif)
-
-## ExecutorService
-
-一、ExecutorService介绍
-
-**线程池：**
-
-多线程技术主要解决处理器单元内多个线程执行的问题，它可以显著减少处理器单元的闲置时间，增加处理器单元的吞吐能力。
-
-假设一个服务器完成一项任务所需时间为：T1 创建线程时间，T2 在线程中执行任务的时间，T3 销毁线程时间。
-
-如果：T1 + T3 远大于 T2，则可以采用线程池，以提高服务器性能。
-
-一个线程池包括以下四个基本组成部分：
-
-1. 线程池管理器（ThreadPool）：用于创建并管理线程池，包括 创建线程池，销毁线程池，添加新任务；
-2. 工作线程（PoolWorker）：线程池中线程，在没有任务时处于等待状态，可以循环的执行任务；
-3. 任务接口（Task）：每个任务必须实现的接口，以供工作线程调度任务的执行，它主要规定了任务的入口，任务执行完后的收尾工作，任务的执行状态等；
-4. 任务队列（taskQueue）：用于存放没有处理的任务。提供一种缓冲机制。
-
-线程池技术正是关注如何缩短或调整T1,T3时间的技术，从而提高服务器程序性能的。它把T1，T3分别安排在服务器程序的启动和结束的时间段或者一些空闲的时间段，这样在服务器程序处理客户请求时，不会有T1，T3的开销了。
-
-线程池不仅调整T1,T3产生的时间段，而且它还显著减少了创建线程的数目，看一个例子：
-
-假设一个服务器一天要处理50000个请求，并且每个请求需要一个单独的线程完成。在线程池中，线程数一般是固定的，所以产生线程总数不会超过线程池中线程的数目，而如果服务器不利用线程池来处理这些请求则线程总数为50000。一般线程池大小是远小于50000。所以利用线程池的服务器程序不会为了创建50000而在处理请求时浪费时间，从而提高效率。
-
-ExecutorService是Java中对线程池定义的一个接口，它java.util.concurrent包中，在这个接口中定义了和后台任务执行相关的方法：
-
-
-Java API对ExecutorService接口的实现有两个，所以这两个即是Java线程池具体实现类：
-
-1. ThreadPoolExecutor
-2. ScheduledThreadPoolExecutor
-
-除此之外，ExecutorService还继承了Executor接口（注意区分Executor接口和Executors工厂类），这个接口只有一个execute()方法，最后我们看一下整个继承树：
-
-![img](java_imgs\1598493-20190723112138598-2094415408.png)
-
-任务的委托（Task Delegation）
-
-下方展示了一个线程的把任务委托异步执行的ExecutorService的示意图。 
-
-![示意图](java_imgs\20160728105506622.png)
-
-壹旦线程把任务委托给 ExecutorService，该线程就会继续执行与运行任务无关的其它任务。
-
-二、ExecutorService的创建
-创建一个什么样的ExecutorService的实例（即线程池）需要g根据具体应用场景而定，不过Java给我们提供了一个Executors工厂类，它可以帮助我们很方便的创建各种类型ExecutorService线程池，Executors一共可以创建下面这四类线程池：
-
-1. newCachedThreadPool 创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。
-2. newFixedThreadPool 创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。
-3. newScheduledThreadPool 创建一个定长线程池，支持定时及周期性任务执行。
-4. newSingleThreadExecutor 创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。
-
-备注：Executors只是一个工厂类，它所有的方法返回的都是ThreadPoolExecutor、ScheduledThreadPoolExecutor这两个类的实例。
-
-三、ExecutorService的使用
-
-```java
-ExecutorService executorService = Executors.newFixedThreadPool(10);
-
-executorService.execute(new Runnable() {
-public void run() {
-	System.out.println("Asynchronous task");
-	}
-});
-executorService.shutdown();
-```
-
-四、ExecutorService的执行
-ExecutorService有如下几个执行方法：
-
-- execute(Runnable)
-- submit(Runnable)
-- submit(Callable)
-- invokeAny(...)
-- invokeAll(...)
-
-**execute(Runnable)**
-
-这个方法接收一个Runnable实例，并且异步的执行，请看下面的实例：
-
-```java
-ExecutorService executorService = Executors.newSingleThreadExecutor();
-
-executorService.execute(new Runnable() {
-public void run() {
-System.out.println("Asynchronous task");
-}
-});
-
-executorService.shutdown();
-```
-
-这个方法有个问题，就是没有办法获知task的执行结果。如果我们想获得task的执行结果，我们可以传入一个Callable的实例（下面会介绍）。
-
-**submit(Runnable)**
-
-submit(Runnable)和execute(Runnable)区别是前者可以返回一个Future对象，通过返回的Future对象，我们可以检查提交的任务是否执行完毕，请看下面执行的例子：
-
-```java
-Future future = executorService.submit(new Runnable() {
-public void run() {
-System.out.println("Asynchronous task");
-}
-});
-
-future.get(); //returns null if the task has finished correctly.
-```
-
-如果任务执行完成，future.get()方法会返回一个null。注意，future.get()方法会产生阻塞。
-
-**submit(Callable)**
-
-submit(Callable)和submit(Runnable)类似，也会返回一个Future对象，但是除此之外，submit(Callable)接收的是一个Callable的实现，Callable接口中的call()方法有一个返回值，可以返回任务的执行结果，而Runnable接口中的run()方法是void的，没有返回值。请看下面实例：
-
-```java
-Future future = executorService.submit(new Callable(){
-public Object call() throws Exception {
-System.out.println("Asynchronous Callable");
-return "Callable Result";
-}
-});
-
-System.out.println("future.get() = " + future.get());
-```
-
-如果任务执行完成，future.get()方法会返回Callable任务的执行结果。注意，future.get()方法会产生阻塞。
-
-**invokeAny(…)**
-
-invokeAny(...)方法接收的是一个Callable的集合，执行这个方法不会返回Future，但是会返回所有Callable任务中其中一个任务的执行结果。这个方法也无法保证返回的是哪个任务的执行结果，反正是其中的某一个。请看下面实例：
-
-```java
-ExecutorService executorService = Executors.newSingleThreadExecutor();
-
-Set<Callable<String>> callables = new HashSet<Callable<String>>();
-
-callables.add(new Callable<String>() {
-public String call() throws Exception {
-return "Task 1";
-}
-});
-callables.add(new Callable<String>() {
-public String call() throws Exception {
-return "Task 2";
-}
-});
-callables.add(new Callable<String>() {
-public String call() throws Exception {
-return "Task 3";
-}
-});
-
-String result = executorService.invokeAny(callables);
-System.out.println("result = " + result);
-executorService.shutdown();
-```
-
-大家可以尝试执行上面代码，每次执行都会返回一个结果，并且返回的结果是变化的，可能会返回“Task2”也可是“Task1”或者其它。
-
-**invokeAll(…)**
-
-invokeAll(...)与 invokeAny(...)类似也是接收一个Callable集合，但是前者执行之后会返回一个Future的List，其中对应着每个Callable任务执行后的Future对象。情况下面这个实例：
-
-```java
-ExecutorService executorService = Executors.newSingleThreadExecutor();
-
-Set<Callable<String>> callables = new HashSet<Callable<String>>();
-
-callables.add(new Callable<String>() {
-public String call() throws Exception {
-return "Task 1";
-}
-});
-callables.add(new Callable<String>() {
-public String call() throws Exception {
-return "Task 2";
-}
-});
-callables.add(new Callable<String>() {
-public String call() throws Exception {
-return "Task 3";
-}
-});
-
-List<Future<String>> futures = executorService.invokeAll(callables);
-
-for(Future<String> future : futures){
-System.out.println("future.get = " + future.get());
-}
-
-executorService.shutdown();
-```
-
-五、ExecutorService的关闭
-
-当我们使用完成ExecutorService之后应该关闭它，否则它里面的线程会一直处于运行状态。
-
-举个例子，如果的应用程序是通过main()方法启动的，在这个main()退出之后，如果应用程序中的ExecutorService没有关闭，这个应用将一直运行。之所以会出现这种情况，是因为ExecutorService中运行的线程会阻止JVM关闭。
-
-如果要关闭ExecutorService中执行的线程，我们可以调用ExecutorService.shutdown()方法。在调用shutdown()方法之后，ExecutorService不会立即关闭，但是它不再接收新的任务，直到当前所有线程执行完成才会关闭，所有在shutdown()执行之前提交的任务都会被执行。
-
-如果我们想立即关闭ExecutorService，我们可以调用ExecutorService.shutdownNow()方法。这个动作将跳过所有正在执行的任务和被提交还没有执行的任务。但是它并不对正在执行的任务做任何保证，有可能它们都会停止，也有可能执行完成。
 
 #  文件读写
 
  
 
-![clipboard.png](java_imgs\clip_image1002.gif)
+![clipboard.png](java_imgs\qWGBUmw8tQa.gif)
 
  
 
-![clipboard.png](java_imgs\clip_image1004.gif)
+![clipboard.png](java_imgs\oNJS4uDMw8j.gif)
 
 相对目录：..返回到上一级目录，默认在工程目录下
 
  
 
-![clipboard.png](java_imgs\clip_image0106.gif)
+![clipboard.png](java_imgs\VGFGfR4oX8T.gif)
 
  
 
-![clipboard.png](java_imgs\clip_imag1e008.gif)
+![clipboard.png](java_imgs\MYcP3awabNx.gif)
 
  
 
-![clipboard.png](java_imgs\clip_image0110.gif)
+![clipboard.png](java_imgs\KLWF2yUHDzB.gif)
 
  
 
-![clipboard.png](java_imgs\clip_imag1e012.gif)
+![clipboard.png](java_imgs\eqb2THuygpL.gif)
 
  
 
-![clipboard.png](java_imgs\clip_image0114.gif)
+![clipboard.png](java_imgs\IsyY9vqJreO.gif)
 
  
 
-![clipboard.png](java_imgs\clip_image0116.gif)
+![clipboard.png](java_imgs\ETzEhXWou2d.gif)
 
  
 
-![clipboard.png](java_imgs\clip_image0118.gif)
+![clipboard.png](java_imgs\fxyjhgwnlAZ.gif)
 
  
 
