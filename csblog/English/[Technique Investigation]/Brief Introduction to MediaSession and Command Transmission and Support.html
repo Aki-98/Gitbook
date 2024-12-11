@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Setting up gitbook full process and pitfall record · CS Blog</title>
+        <title>Brief introduction to mediasession and command transmission and support · CS Blog</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../" />
+    <link rel="next" href="../../SUMMARY.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="Binder Communication Related.html" />
     
 
     </head>
@@ -125,9 +125,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.1.1.1" data-path="Setting Up Gitbook Full Process and Pitfall Record.html">
+        <li class="chapter " data-level="1.1.1.1" data-path="../[Engineering Practice]/Setting Up Gitbook Full Process and Pitfall Record.html">
             
-                <a href="Setting Up Gitbook Full Process and Pitfall Record.html">
+                <a href="../[Engineering Practice]/Setting Up Gitbook Full Process and Pitfall Record.html">
             
                     
                     Setting up gitbook full process and pitfall record
@@ -234,9 +234,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.1.4.1" data-path="../[Technique Investigation]/Binder Communication Related.html">
+        <li class="chapter " data-level="1.1.4.1" data-path="Binder Communication Related.html">
             
-                <a href="../[Technique Investigation]/Binder Communication Related.html">
+                <a href="Binder Communication Related.html">
             
                     
                     Binder communication related
@@ -247,9 +247,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.4.2" data-path="../[Technique Investigation]/Brief Introduction to MediaSession and Command Transmission and Support.html">
+        <li class="chapter active" data-level="1.1.4.2" data-path="Brief Introduction to MediaSession and Command Transmission and Support.html">
             
-                <a href="../[Technique Investigation]/Brief Introduction to MediaSession and Command Transmission and Support.html">
+                <a href="Brief Introduction to MediaSession and Command Transmission and Support.html">
             
                     
                     Brief introduction to mediasession and command transmission and support
@@ -826,7 +826,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Setting up gitbook full process and pitfall record</a>
+        <a href="../.." >Brief introduction to mediasession and command transmission and support</a>
     </h1>
 </div>
 
@@ -841,120 +841,219 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>Here is the translation of the provided text into English:</p>
+                                <h1 id="mediasession-cs-framework"><strong>MediaSession-CS Framework</strong></h1>
+<ul>
+<li>C/S Architecture<ul>
+<li>Defines a standard communication interface between the UI and the player in audio/video applications, achieving complete decoupling between the UI and the player.</li>
+</ul>
+</li>
+</ul>
+<p><img src="Brief Introduction to MediaSession and Command Transmission and Support_imgs/dsUvjUo8wYG.png" alt="ts8v1qwi2k"></p>
+<h2 id="mediasession-server-&#x2013;-controlled-player-endpoint"><strong>MediaSession (Server) &#x2013; Controlled Player Endpoint</strong></h2>
+<ul>
+<li>Manages all communication with the <code>MediaPlayer</code> and hides its APIs from other parts of the application. The system can only access the player through the <code>MediaSession</code>.</li>
+<li>Maintains information such as:<ul>
+<li><strong>PlaybackState</strong>: Player status (e.g., play/pause).</li>
+<li><strong>MetaData</strong>: Related information about the content being played (e.g., title/artist).</li>
+</ul>
+</li>
+<li>The <code>MediaSession</code> can receive callbacks from one or more <code>MediaController</code> instances. The response logic to these callbacks must remain consistent, regardless of which client application initiates them.</li>
+</ul>
+<h2 id="mediacontroller-client"><strong>MediaController (Client)</strong></h2>
+<ul>
+<li>The UI communicates solely with the <code>MediaController</code>. It converts transport control operations into callbacks to the <code>MediaSession</code>. Whenever the session state changes, the <code>MediaController</code> receives callbacks from the <code>MediaSession</code> and can update the UI accordingly.</li>
+<li>A <code>MediaController</code> can connect to only one <code>MediaSession</code> at a time.</li>
+<li>Creating a <code>MediaController</code> requires a pairing token from the controlled endpoint, which means it should be created only after a successful browser connection.</li>
+</ul>
 <hr>
-<p>All Python programs mentioned here are written by myself. Since I only considered my own needs and didn&apos;t think about other situations, it would be better to modify them according to your own situation if you want to copy and use them.</p>
-<blockquote>
-<p>Code location: <a href="https://github.com/Leah-98/Python-Automation/tree/main/Gitbook" target="_blank">https://github.com/Leah-98/Python-Automation/tree/main/Gitbook</a></p>
-</blockquote>
-<p>The biggest advantage of processing your notes into Gitbook is the ability to search globally.</p>
-<h1 id="step-1-prepare-the-md-note-repository">Step 1: Prepare the MD Note Repository</h1>
-<p><strong>1. Convert all files to MD or reference them in MD files</strong></p>
-<p>Gitbook can only render Markdown pages.</p>
-<p>Some of my old notes were exported from Evernote and Youdao Cloud, which were in web format. I converted the web format to PDF and referenced it in the README.md folder (append_other_files_to_readme.py).</p>
-<p>There are also some scattered TXT notes, which I directly changed the suffix to MD (txt_to_md.py).</p>
-<p><strong>2. Place the images referenced in MD in a subfolder at the same level as the MD file, and name the subfolder after the MD file with &quot;_imgs&quot; appended</strong></p>
-<p>The image references in the previous notes were messy. Some were web images, and some were absolute paths written by Typora. When operating on the same note repository on different computers, the absolute paths were inconsistent. Some were placed in the &quot;imgs&quot; folder with relative paths, but the &quot;imgs&quot; folder was located in various positions within the note repository, making it messy.</p>
-<p>I used a Python program to unify and place them in a subfolder at the same level as the MD file, naming the subfolder after the MD file with &quot;_imgs&quot; appended, and rewriting the image references in MD to relative paths (reformat_imgs.py).</p>
-<p>Also, many of my book excerpts are directly taken from physical books. The phone photos are too large and need to be compressed (compress_pictures.py).</p>
-<p><strong>3. Generate SUMMARY.md</strong></p>
-<p>Arrange all MD files and write them in SUMMARY.md. If it&apos;s a subfolder and doesn&apos;t have README.md, create one yourself (generate_summary.py).</p>
-<p>This is better than gitbook init, which has various bugs and cannot generate a summary based on all MD files.</p>
-<h1 id="step-2-prepare-the-gitbook-setup-environment">Step 2: Prepare the Gitbook Setup Environment</h1>
-<p>I followed some online tutorials and encountered many issues.</p>
-<blockquote>
-<p>This tutorial is too simple. You can take a look to get a general idea, but don&apos;t follow its procedures:</p>
-<p><a href="https://tonydeng.github.io/gitbook-zh/" target="_blank">https://tonydeng.github.io/gitbook-zh/</a></p>
-<p>This one is more detailed and better:</p>
-<p><a href="https://1927344728.github.io/fed-knowledge/tools/Gitbook/" target="_blank">https://1927344728.github.io/fed-knowledge/tools/Gitbook/</a></p>
-</blockquote>
-<p><strong>0. Preparing for pitfalls</strong></p>
-<p>At first, I directly downloaded and installed from the official website:</p>
-<blockquote>
-<p>Official website: <a href="https://nodejs.org/en" target="_blank">https://nodejs.org/en</a></p>
-</blockquote>
-<p>However, the version from the official website (v18.x) is too new, causing various adaptation issues with gitbook. Later, I downgraded to v.10.x to use gitbook normally.</p>
-<p>I encountered an error when installing gitbook-cli after installing v18.x version of nodejs and calling gitbook init in the command line:</p>
-<pre><code>/home/travis/.nvm/versions/node/v12.18.3/lib/node_modules/gitbook-cli/node_modules/npm/node_modules/graceful-fs/polyfills.js:287
-      if (cb) cb.apply(this, arguments)
-                 ^
-TypeError: cb.apply is not a function
-    at /home/travis/.nvm/versions/node/v12.18.3/lib/node_modules/gitbook-cli/node_modules/npm/node_modules/graceful-fs/polyfills.js:287:18
-    at FSReqCallback.oncomplete (fs.js:169:5)
-</code></pre><blockquote>
-<p>Solution: <a href="https://stackoverflow.com/questions/64211386/gitbook-cli-install-error-typeerror-cb-apply-is-not-a-function-inside-graceful" target="_blank">https://stackoverflow.com/questions/64211386/gitbook-cli-install-error-typeerror-cb-apply-is-not-a-function-inside-graceful</a></p>
-</blockquote>
-<p>You need to update the graceful-fs version.</p>
-<p>When I tried to update with npm, I encountered another issue where any command would result in an error &quot;ERR! Cannot read property &apos;insert&apos; of undefined&quot;.</p>
-<blockquote>
-<p>Solution: <a href="https://github.com/npm/cli/issues/4876" target="_blank">https://github.com/npm/cli/issues/4876</a></p>
-</blockquote>
-<p>You need to change the mirror to <a href="https://registry.npmmirror.com/" target="_blank">https://registry.npmmirror.com</a>. If you also need to set a proxy, there is a tutorial here:</p>
-<blockquote>
-<p>Setting npm proxy: <a href="https://blog.csdn.net/yanzi1225627/article/details/80247758" target="_blank">https://blog.csdn.net/yanzi1225627/article/details/80247758</a></p>
-</blockquote>
-<p>After updating, calling any gitbook command resulted in no response, no error, and no information. The local directory remained unchanged. I then downgraded nodejs to 10.x.</p>
-<p>During this process, there was also an issue that gitbook and gitbook-cli could not coexist. You need to uninstall gitbook to use gitbook-cli (the command-line tool for gitbook). After installing gitbook-cli, the first time you call the gitbook command, like checking the version with <code>gitbook -V</code>, gitbook-cli will install the corresponding version of gitbook.</p>
-<p>Since I got stuck at the &quot;install gitbook&quot; step every time I called the gitbook command and checked online for a solution, I found that you can clone gitbook&apos;s github repository and then install and link it yourself:</p>
-<pre><code>git clone https://github.com/GitbookIO/gitbook.git
-cd gitbook
-npm install
-npm link
-</code></pre><p>Firstly, the instructions in the gitbook repository say to install with <code>bun</code> instead of <code>npm</code>. Secondly, this installation is equivalent to <code>npm install gitbook</code>, which conflicts with gitbook-cli. Therefore, this method is incorrect.</p>
-<p>Here is the correct method:</p>
-<p><strong>1. Install nvm (Node.js version manager) and Node.js v10.x</strong></p>
-<p>Choose one based on your system:</p>
-<pre><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+<h1 id="mediasession-authorization-framework"><strong>MediaSession Authorization Framework</strong></h1>
+<h2 id="mediabrowser-client"><strong>MediaBrowser (Client)</strong></h2>
+<ul>
+<li>Used to connect to the <code>MediaBrowserService</code> and subscribe to data. It allows retrieval of the service connection state and music data via registered callbacks. Typically created on the client side.</li>
+</ul>
+<h2 id="mediabrowserservice-server"><strong>MediaBrowserService (Server)</strong></h2>
+<ul>
+<li>Contains two key callbacks:<ul>
+<li><code>onGetRoot</code>: Manages client connection requests and determines whether the client is allowed to connect.</li>
+<li><code>onLoadChildren</code>: Triggered when a <code>MediaBrowser</code> sends a data subscription request. This is typically where asynchronous data fetching is performed before sending the data back through the <code>MediaBrowser</code>&apos;s registered interface.</li>
+</ul>
+</li>
+</ul>
+<h1 id="command-transmission"><strong>Command Transmission</strong></h1>
+<p><img src="Brief Introduction to MediaSession and Command Transmission and Support_imgs/Apm71s0eRqA.png" alt="image-2024-9-20_16-15-7"></p>
+<h2 id="client-to-server-communication"><strong>Client-to-Server Communication</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th><code>MediaController.TransportControls</code></th>
+<th><code>MediaSession.Callback</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Play</td>
+<td><code>play()</code></td>
+<td><code>onPlay()</code></td>
+</tr>
+<tr>
+<td>Pause</td>
+<td><code>pause()</code></td>
+<td><code>onPause()</code></td>
+</tr>
+<tr>
+<td>Stop</td>
+<td><code>stop()</code></td>
+<td><code>onStop()</code></td>
+</tr>
+<tr>
+<td>Seek to Position</td>
+<td><code>seekTo(long)</code></td>
+<td><code>onSeekTo(long)</code></td>
+</tr>
+<tr>
+<td>Fast Forward</td>
+<td><code>fastForward()</code></td>
+<td><code>onFastForward()</code></td>
+</tr>
+<tr>
+<td>Rewind</td>
+<td><code>rewind()</code></td>
+<td><code>onRewind()</code></td>
+</tr>
+<tr>
+<td>Next</td>
+<td><code>skipToNext()</code></td>
+<td><code>onSkipToNext()</code></td>
+</tr>
+<tr>
+<td>Previous</td>
+<td><code>skipToPrevious()</code></td>
+<td><code>onSkipToPrevious()</code></td>
+</tr>
+<tr>
+<td>Set Playback Speed</td>
+<td><code>setPlaybackSpeed(float)</code></td>
+<td><code>onSetPlaybackSpeed(float)</code></td>
+</tr>
+<tr>
+<td>Rate</td>
+<td><code>setRating(Rating)</code></td>
+<td><code>onSetRating(Rating)</code></td>
+</tr>
+<tr>
+<td>Send Custom Action</td>
+<td><code>sendCustomAction(String,Bundle)</code></td>
+<td><code>onSendCustomAction(String,Bundle)</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="server-to-client-callbacks"><strong>Server-to-Client Callbacks</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th><code>MediaSession</code></th>
+<th><code>MediaController.Callback</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Current Track Metadata</td>
+<td><code>setMetadata(MediaMetadata)</code></td>
+<td><code>onMetadataChanged(MediaMetadata)</code></td>
+</tr>
+<tr>
+<td>Playback State</td>
+<td><code>setPlaybackState(PlaybackState)</code></td>
+<td><code>onPlaybackStateChanged(PlaybackState)</code></td>
+</tr>
+<tr>
+<td>Playback Queue</td>
+<td><code>setQueue(List QueueItem)</code></td>
+<td><code>onQueueChanged(List QueueItem)</code></td>
+</tr>
+<tr>
+<td>Queue Title</td>
+<td><code>setQueueTitle(CharSequence)</code></td>
+<td><code>onQueueTitleChanged(CharSequence)</code></td>
+</tr>
+<tr>
+<td>Extras</td>
+<td><code>setExtras(Bundle)</code></td>
+<td><code>onExtrasChanged(Bundle)</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="command-support"><strong>Command Support</strong></h1>
+<h2 id="topic-1-can-you-determine-if-the-player-supports-specific-commands-via-code"><strong>Topic 1: Can you determine if the player supports specific commands via code?</strong></h2>
+<p><strong>Conclusion</strong>: You can determine support for non-custom commands, but not for custom commands.</p>
+<h3 id="example-checking-supported-non-custom-commands">Example: Checking Supported Non-Custom Commands</h3>
+<pre><code>java&#x590D;&#x5236;&#x4EE3;&#x7801;MediaController mediaController = getMediaController(context);
+if (mediaController != null) {
+    PlaybackState playbackState = mediaController.getPlaybackState();
 
-bash
-Copy code
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-</code></pre><p>Install Node.js v10.x and use it:</p>
-<pre><code>nvm install 10
-nvm use 10
-</code></pre><p>I also encountered an issue here. In the above steps, the npm version compatible with Node.js v10.x will be installed. However, I previously used v18.x. After switching to Node.js v10.x, the npm version did not change. Any npm command would result in an error. Later, I switched back to v18, uninstalled npm, which uninstalls the latest version of npm, and then switched to v10.x, allowing me to use the older version of npm.</p>
-<pre><code>nvm use 18
-npm uninstall npm -g
-</code></pre><p>The <code>-g</code> means the operation is carried out globally, which will be used in the following commands.</p>
-<p><strong>2. Install and use gitbook-cli &amp; gitbook</strong></p>
-<pre><code>npm install gitbook-cli -g
-</code></pre><p>The <code>npm install -g</code> command is used to globally install Node.js modules. This means the installed modules will be placed in a specific directory, usually the global <code>node_modules</code> directory of your system, not in the <code>node_modules</code> directory of the current project.</p>
-<p>If you don&apos;t use the <code>-g</code> (global) parameter in the <code>npm install</code> command, the command will install the specified package in the <code>node_modules</code> folder of the current project, not in the global environment.</p>
-<pre><code>gitbook -V
-</code></pre><p>Check the gitbook version. The first time you call any gitbook command, it will attempt to install gitbook.</p>
-<p>Running <code>gitbook -V</code> again will show the versions of gitbook-cli and gitbook.</p>
-<p>Note: Do not install gitbook with <code>npm install gitbook</code> directly; use gitbook-cli instead.</p>
-<p><strong>3. Preview the Gitbook website and make adjustments</strong></p>
-<p>Switch the command line to the root directory of your MD source files and run the following command to automatically generate README.md and SUMMARY.md:</p>
-<pre><code>gitbook init
-</code></pre><p>Note: Do not include the character &quot;#&quot; in the directory names and filenames under the MD files, meaning the generated SUMMARY.md should not contain the &quot;#&quot; character. If it does, it will cause the links in the gitbook page&apos;s left navigation bar to not work.</p>
-<p>Also, do not have consecutive curly braces in the MD files, like .</p>
-<blockquote>
-<p>Related instructions: <a href="https://wkcom.gitee.io/gitbook&#x7684;&#x4F7F;&#x7528;/3&#x3001;gitbook&#x8FDE;&#x7EED;&#x5927;&#x62EC;&#x53F7;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x5F0F;.html" target="_blank">https://wkcom.gitee.io/gitbook%E7%9A%84%E4%BD%BF%E7%94%A8/3%E3%80%81gitbook%E8%BF%9E%E7%BB%AD%E5%A4%A7%E6%8B%AC%E5%8F%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F.html</a></p>
-</blockquote>
-<p>Adding a space between the curly braces will resolve the issue.</p>
-<p>Preview the gitbook website:</p>
-<pre><code>gitbook server
-</code></pre><p>Open the local port in the browser to view the page:</p>
-<pre><code>http://localhost:4000/
-</code></pre><h1 id="step-3-set-up-io-online-website">Step 3: Set up .io online website</h1>
-<p>There are many solutions; I chose to directly upload the static website to Github.</p>
-<p>Generate the gitbook static website, run the following command in the root directory of your MD source files:</p>
-<pre><code>gitbook build
-</code></pre><p>This will generate a <code>_book</code> directory, containing the static website code.</p>
-<p>As long as the repository has a <code>gh-pages</code> branch, you can access Gitbook Pages with the following link:</p>
-<pre><code>https://githubusername.github.io/reponame
-</code></pre><p>So the steps are:</p>
-<ol>
-<li>Create an empty Github repository.</li>
-<li>Check out a <code>gh-pages</code> branch, upload the static website.</li>
-<li>I need multiple gitbooks, so I created a subfolder in the root directory and uploaded the corresponding static website in this subfolder.</li>
-</ol>
-<p>Then, I can access multiple Gitbooks with the following paths:</p>
-<pre><code>https://githubusername.github.io/reponame/subfoldername1
-https://githubusername.github.io/reponame/subfoldername2
+    if (playbackState != null) {
+        long actions = playbackState.getActions();
+
+        if ((actions &amp; PlaybackState.ACTION_PLAY) != 0) {
+            Log.d(&quot;MediaSession&quot;, &quot;Player supports Play command.&quot;);
+        }
+        if ((actions &amp; PlaybackState.ACTION_PAUSE) != 0) {
+            Log.d(&quot;MediaSession&quot;, &quot;Player supports Pause command.&quot;);
+        }
+        if ((actions &amp; PlaybackState.ACTION_FAST_FORWARD) != 0) {
+            Log.d(&quot;MediaSession&quot;, &quot;Player supports Fast Forward command.&quot;);
+        }
+    }
+}
+</code></pre><hr>
+<h2 id="topic-2-can-you-determine-if-the-player-successfully-executed-a-command-via-code"><strong>Topic 2: Can you determine if the player successfully executed a command via code?</strong></h2>
+<p><strong>Conclusion</strong>: You can only determine the success of certain commands (e.g., play/pause) using <code>PlaybackState</code>, but there are no callbacks for commands like next/previous.</p>
+<h3 id="example-checking-command-execution-success">Example: Checking Command Execution Success</h3>
+<pre><code>java&#x590D;&#x5236;&#x4EE3;&#x7801;// Assume a MediaController instance exists
+MediaController mediaController = ...;
+
+// Create and register a Callback to listen for state changes
+MediaController.Callback callback = new MediaController.Callback() {
+    @Override
+    public void onPlaybackStateChanged(PlaybackState state) {
+        super.onPlaybackStateChanged(state);
+        if (state != null) {
+            int playbackState = state.getState();
+            switch (playbackState) {
+                case PlaybackState.STATE_PLAYING:
+                    Log.d(&quot;MediaController&quot;, &quot;Playback started successfully.&quot;);
+                    break;
+                case PlaybackState.STATE_PAUSED:
+                    Log.d(&quot;MediaController&quot;, &quot;Playback is paused.&quot;);
+                    break;
+                case PlaybackState.STATE_STOPPED:
+                    Log.d(&quot;MediaController&quot;, &quot;Playback stopped.&quot;);
+                    break;
+                case PlaybackState.STATE_ERROR:
+                    Log.e(&quot;MediaController&quot;, &quot;Playback error: &quot; + state.getErrorMessage());
+                    break;
+                default:
+                    Log.d(&quot;MediaController&quot;, &quot;Playback state changed: &quot; + playbackState);
+                    break;
+            }
+        }
+    }
+};
+
+// Register the Callback
+mediaController.registerCallback(callback);
+
+// Execute play operation
+mediaController.getTransportControls().play();
+
+// Unregister the Callback when appropriate
+// mediaController.unregisterCallback(callback);
 </code></pre><footer class="page-footer"><span class="copyright">Copyright &#xA9; Leah 2024 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">modified time:
-2024-12-11 15:24:40
+2024-12-11 15:22:19
 </span></footer>
                                 
                                 </section>
@@ -982,12 +1081,12 @@ https://githubusername.github.io/reponame/subfoldername2
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: [engineering practice]">
+                <a href="Binder Communication Related.html" class="navigation navigation-prev " aria-label="Previous page: Binder communication related">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../" class="navigation navigation-next " aria-label="Next page: [problem solving]">
+                <a href="../../SUMMARY.html" class="navigation navigation-next " aria-label="Next page: Summary">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -998,7 +1097,7 @@ https://githubusername.github.io/reponame/subfoldername2
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Setting up gitbook full process and pitfall record","level":"1.1.1.1","depth":3,"next":{"title":"[problem solving]","level":"1.1.2","depth":2,"path":"English/README.md","ref":"English/README.md","articles":[{"title":"The program packaged with pyinstaller that depends on apkutils cannot run","level":"1.1.2.1","depth":3,"path":"English/[Problem Solving]/The program packaged with PyInstaller that depends on apkutils cannot run.md","ref":"English/[Problem Solving]/The program packaged with PyInstaller that depends on apkutils cannot run.md","articles":[]}]},"previous":{"title":"[engineering practice]","level":"1.1.1","depth":2,"path":"English/README.md","ref":"English/README.md","articles":[{"title":"Setting up gitbook full process and pitfall record","level":"1.1.1.1","depth":3,"path":"English/[Engineering Practice]/Setting Up Gitbook Full Process and Pitfall Record.md","ref":"English/[Engineering Practice]/Setting Up Gitbook Full Process and Pitfall Record.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["accordion","search-pro","-search","tbfed-pagefooter"],"root":"/","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Leah 2024","modify_label":"modified time:","modift_format":"YYYY-MM-DD HH:mm:ss"},"accordion":{},"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"leah","page":{"title":"CS Blog"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"authorName":"leah"},"title":"CS Blog","gitbook":"3.2.3"},"file":{"path":"English/[Engineering Practice]/Setting Up Gitbook Full Process and Pitfall Record.md","mtime":"2024-12-11T07:24:40.132Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-12-11T07:31:04.513Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Brief introduction to mediasession and command transmission and support","level":"1.1.4.2","depth":3,"next":{"title":"Summary","level":"1.2","depth":1,"path":"SUMMARY.md","ref":"SUMMARY.md","articles":[]},"previous":{"title":"Binder communication related","level":"1.1.4.1","depth":3,"path":"English/[Technique Investigation]/Binder Communication Related.md","ref":"English/[Technique Investigation]/Binder Communication Related.md","articles":[]},"dir":"ltr"},"config":{"plugins":["accordion","search-pro","-search","tbfed-pagefooter"],"root":"/","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Leah 2024","modify_label":"modified time:","modift_format":"YYYY-MM-DD HH:mm:ss"},"accordion":{},"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"leah","page":{"title":"CS Blog"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"authorName":"leah"},"title":"CS Blog","gitbook":"3.2.3"},"file":{"path":"English/[Technique Investigation]/Brief Introduction to MediaSession and Command Transmission and Support.md","mtime":"2024-12-11T07:22:19.487Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-12-11T07:31:04.513Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

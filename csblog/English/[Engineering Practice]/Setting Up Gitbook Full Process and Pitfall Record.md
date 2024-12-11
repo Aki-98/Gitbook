@@ -55,7 +55,7 @@ However, the version from the official website (v18.x) is too new, causing vario
 I encountered an error when installing gitbook-cli after installing v18.x version of nodejs and calling gitbook init in the command line:
 
 ```
-shellCopy code/home/travis/.nvm/versions/node/v12.18.3/lib/node_modules/gitbook-cli/node_modules/npm/node_modules/graceful-fs/polyfills.js:287
+/home/travis/.nvm/versions/node/v12.18.3/lib/node_modules/gitbook-cli/node_modules/npm/node_modules/graceful-fs/polyfills.js:287
       if (cb) cb.apply(this, arguments)
                  ^
 TypeError: cb.apply is not a function
@@ -82,7 +82,7 @@ During this process, there was also an issue that gitbook and gitbook-cli could 
 Since I got stuck at the "install gitbook" step every time I called the gitbook command and checked online for a solution, I found that you can clone gitbook's github repository and then install and link it yourself:
 
 ```
-shellCopy codegit clone https://github.com/GitbookIO/gitbook.git
+git clone https://github.com/GitbookIO/gitbook.git
 cd gitbook
 npm install
 npm link
@@ -97,7 +97,7 @@ Here is the correct method:
 Choose one based on your system:
 
 ```
-shellCopy codecurl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 bash
 Copy code
@@ -107,14 +107,14 @@ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 Install Node.js v10.x and use it:
 
 ```
-shellCopy codenvm install 10
+nvm install 10
 nvm use 10
 ```
 
 I also encountered an issue here. In the above steps, the npm version compatible with Node.js v10.x will be installed. However, I previously used v18.x. After switching to Node.js v10.x, the npm version did not change. Any npm command would result in an error. Later, I switched back to v18, uninstalled npm, which uninstalls the latest version of npm, and then switched to v10.x, allowing me to use the older version of npm.
 
 ```
-shellCopy codenvm use 18
+nvm use 18
 npm uninstall npm -g
 ```
 
@@ -123,7 +123,6 @@ The `-g` means the operation is carried out globally, which will be used in the 
 **2. Install and use gitbook-cli & gitbook**
 
 ```
-shellCopy code
 npm install gitbook-cli -g
 ```
 
@@ -132,7 +131,6 @@ The `npm install -g` command is used to globally install Node.js modules. This m
 If you don't use the `-g` (global) parameter in the `npm install` command, the command will install the specified package in the `node_modules` folder of the current project, not in the global environment.
 
 ```
-shellCopy code
 gitbook -V
 ```
 
@@ -147,7 +145,6 @@ Note: Do not install gitbook with `npm install gitbook` directly; use gitbook-cl
 Switch the command line to the root directory of your MD source files and run the following command to automatically generate README.md and SUMMARY.md:
 
 ```
-shellCopy code
 gitbook init
 ```
 
@@ -162,14 +159,12 @@ Adding a space between the curly braces will resolve the issue.
 Preview the gitbook website:
 
 ```
-shellCopy code
 gitbook server
 ```
 
 Open the local port in the browser to view the page:
 
 ```
-shellCopy code
 http://localhost:4000/
 ```
 
@@ -180,7 +175,6 @@ There are many solutions; I chose to directly upload the static website to Githu
 Generate the gitbook static website, run the following command in the root directory of your MD source files:
 
 ```
-shellCopy code
 gitbook build
 ```
 
@@ -189,7 +183,6 @@ This will generate a `_book` directory, containing the static website code.
 As long as the repository has a `gh-pages` branch, you can access Gitbook Pages with the following link:
 
 ```
-shellCopy code
 https://githubusername.github.io/reponame
 ```
 
@@ -202,7 +195,7 @@ So the steps are:
 Then, I can access multiple Gitbooks with the following paths:
 
 ```
-shellCopy codehttps://githubusername.github.io/reponame/subfoldername1
+https://githubusername.github.io/reponame/subfoldername1
 https://githubusername.github.io/reponame/subfoldername2
 ```
 

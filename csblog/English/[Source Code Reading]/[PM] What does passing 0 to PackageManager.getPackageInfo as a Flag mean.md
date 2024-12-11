@@ -1,51 +1,44 @@
-# 环境
+# Environment
 
 Android SDK 31（Android 12）
 
 
 
-# 背景
+# Background
 
-起因是项目源码中有这一条代码
+The issue arose from the following line of code in the project :
 
 ```java
 PackageManager packageManager = context.getPackageManager();
 PackageInfo info = packageManager.getPackageInfo(context.getPackageName(), 0);
 ```
 
-其中0作为flag参数传递，被PM Chanllenge应该使用Android常量而不是int值，于是查阅SDK说明与文档。
+The `0` used as a flag parameter is flagged by PM Challenge, suggesting that Android constants should be used instead of integer values. I consulted the SDK documentation for clarification.
 
-SDK说明：
+SDK Documentation:
 
-![1](PackageManager.getPackageInfo()传入0作为Flag意味着什么_imgs\1.png)
+![1]([PM] What does passing 0 to PackageManager.getPackageInfo as a Flag mean_imgs\SpcSRFlX0uM.png)
 
-Android文档：
+Android Documentation：
 
-![2](PackageManager.getPackageInfo()传入0作为Flag意味着什么_imgs\2.png)
+![2]([PM] What does passing 0 to PackageManager.getPackageInfo as a Flag mean_imgs\lNMCyg4Jzz7.png)
 
-可见0并没有对应的常量值
 
-也没有直接说明传入0代表什么，但可以猜测传入其他值及其他值的结合就可以获得更多的信息
 
-# 对于Flag的处理
 
-从前面的SDK说明中可以看到，getPackageInfo是abstract方法，所以实现并不在PackageManager中。
+It's evident that there is no corresponding constant value for 0.
 
-打印context.getPackageManager().getClass().getName()看到，context.getPackageManger()方法获得的是ApplicationPackageManager对象。
+There's no direct explanation of what passing 0 signifies, but it can be inferred that using other values and combinations of values could yield more information.
 
-这里还无法看到Android系统是怎样获得PackageInfo的，但可以看到对flags的处理。
+# Handling of Flags
 
-ApplicationPackageManager.getPackageInfo(String packageName, int flags) -->
+From the previous SDK documentation, it's clear that `getPackageInfo` is an abstract method, so its implementation is not in `PackageManager`.
 
-```
-210      @Override
-211      public PackageInfo getPackageInfo(String packageName, int flags)
-212              throws NameNotFoundException {
-213          return getPackageInfoAsUser(packageName, flags, getUserId());
-214      }
-```
+Printing `context.getPackageManager().getClass().getName()` reveals that the `context.getPackageManager()` method returns an `ApplicationPackageManager` object.
 
-ApplicationPackageManager.getPackageInfoAsUser(String packageName, int flags, int userId) --> 
+Here, we cannot yet see how the Android system retrieves `PackageInfo`, but we can observe the handling of flags.
+
+**ApplicationPackageManager.getPackageInfo(String packageName, int flags) -->**
 
 ```java
 232      @Override
@@ -83,15 +76,15 @@ ApplicationPackageManager.getPackageInfoAsUser(String packageName, int flags, in
 1843      }
 ```
 
-从对上面方面的源码阅读中，也可以猜测到flag为0时，是不会额外获得四大组件信息的。
+From the source code reading of the above aspects, it can also be inferred that when the flag is 0, no additional information about the four major components is obtained.
 
-对于Flag的处理也存在在Android系统中的更多位置，但都脱离不开&位运算，可以得到结论说只要flags传入为0，在最终获取PackageInfo时使用的flags就为0
+The handling of flags exists in various places within the Android system, but all are based on bitwise AND operations. We can conclude that as long as the flags passed in are 0, the flags used when finally obtaining `PackageInfo` will also be 0.
 
-# 获取PackageInfo
+# Obtaining PackageInfo
 
-关于获取PackageInfo，Android11引入了缓存机制，关于这一变动，有篇文章写得已经很好了：https://juejin.cn/post/7004708493634568200
+Regarding obtaining `PackageInfo`, Android 11 introduced a caching mechanism. There's an article that explains this change well: https://juejin.cn/post/7004708493634568200
 
-除开缓存机制之外，获取PackageInfo最后可以定位到PackageManager的getPackageInfoAsUserUncached()方法
+Apart from the caching mechanism, obtaining `PackageInfo` can ultimately be traced to the `getPackageInfoAsUserUncached()` method in `PackageManager`.
 
 ```java
 private static PackageInfo getPackageInfoAsUserUncached(
@@ -104,7 +97,7 @@ private static PackageInfo getPackageInfoAsUserUncached(
 }
 ```
 
-通过阅读ActivityThread的代码可以知道，PackageInfo是通过IPackageManager，由PackageManagerService获得的
+By reading the code of `ActivityThread`, it can be determined that `PackageInfo` is obtained through `IPackageManager` and is acquired by `PackageManagerService`.
 
 ```java
 2345      @UnsupportedAppUsage
@@ -118,7 +111,7 @@ private static PackageInfo getPackageInfoAsUserUncached(
 2353      }
 ```
 
-而在PackageManagerService中，对于PackageInfo的获取最后可以定位到这个方法：
+And in `PackageManagerService`, the method responsible for obtaining `PackageInfo` can ultimately be traced to:
 
 ```java
 3400          protected PackageInfo getPackageInfoInternalBody(String packageName, long versionCode,
@@ -128,7 +121,7 @@ private static PackageInfo getPackageInfoAsUserUncached(
 3404              packageName = resolveInternalPackageNameLPr(packageName, versionCode);
 3405  
 3406              final boolean matchFactoryOnly = (flags & MATCH_FACTORY_ONLY) != 0;
-3407              if (matchFactoryOnly) { // flags=0时不走入这里
+3407              if (matchFactoryOnly) { //[When flags=0, it doesn't enter here.]
 3408                  // Instant app filtering for APEX modules is ignored
 3409                  if ((flags & MATCH_APEX) != 0) {
 3410                      return mApexManager.getPackageInfo(packageName,
@@ -154,7 +147,7 @@ private static PackageInfo getPackageInfoAsUserUncached(
 3430                  Log.v(TAG, "getPackageInfo " + packageName + ": " + p);
 3431              if (p != null) { 
 3432                  final PackageSetting ps = getPackageSetting(p.getPackageName());
-    				//这里会将flags继续传入
+    				// [the flags will be passed in this block]
 3433                  if (filterSharedLibPackageLPr(ps, filterCallingUid, userId, flags)) {  
 3434                      return null;
 3435                  }
@@ -162,10 +155,10 @@ private static PackageInfo getPackageInfoAsUserUncached(
 3437                      return null;
 3438                  }
 3439  
-    				//这里会将flags继续传入
+    				// [the flags will be passed in this block]
 3440                  return generatePackageInfo(ps, flags, userId);
 3441              }
-    				//找到Package时不走入这里了，只考虑上面的方法定位
+    				// [This part is not entered when the package is found, only consider the method mentioned above for locating.]
 3442              if (!matchFactoryOnly && (flags & MATCH_KNOWN_PACKAGES) != 0) {
 3443                  final PackageSetting ps = mSettings.getPackageLPr(packageName);
 3444                  if (ps == null) return null;
@@ -184,11 +177,11 @@ private static PackageInfo getPackageInfoAsUserUncached(
 3457          }
 ```
 
-filterSharedLibPackageLPr也只是一个判断方法，方法注释是：Callers can access only the libs they depend on, otherwise they need to explicitly ask for the shared libraries given the caller is allowed to access all static libs.（调用者只能访问它所依赖的库，除非它明确请求访问共享库。另外，给定调用者可以访问所有静态库的情况下，它仍然需要显式请求访问共享库）
+`filterSharedLibPackageLPr` is merely a judgment method, and its method comment is: "Callers can access only the libs they depend on, otherwise they need to explicitly ask for the shared libraries given the caller is allowed to access all static libs."
 
-对此的理解是一个访问权限控制，没有权限的情况下不允许访问共享库，最终getPackageInfoInternalBody方法就会返回null值。
+The understanding of this is an access control mechanism. Without permission, access to shared libraries is not allowed, and the `getPackageInfoInternalBody` method will ultimately return a null value.
 
-默认已通过这一权限控制机制时，最后会走到generatePackageInfo(ps, flags, userId)这一方法内
+When this permission control mechanism is passed by default, it will ultimately enter the `generatePackageInfo(ps, flags, userId)` method.
 
 ```java
     private PackageInfo generatePackageInfo(PackageSetting ps, int flags, int userId) {
@@ -207,7 +200,7 @@ filterSharedLibPackageLPr也只是一个判断方法，方法注释是：Callers
             return null;
         }
 		
-        // flags为0不会走入下面的
+        // [When flags are 0, it won't enter the following section.]
         if ((flags & MATCH_UNINSTALLED_PACKAGES) != 0
                 && ps.isSystem()) {
             flags |= MATCH_ANY_USER;
@@ -218,7 +211,7 @@ filterSharedLibPackageLPr也只是一个判断方法，方法注释是：Callers
         if (p != null) {
             final PermissionsState permissionsState = ps.getPermissionsState();
 
-            // flags为0不会获取GID信息
+            // [When flags are 0, the GID information will not be retrieved.]
             // Compute GIDs only if requested
             final int[] gids = (flags & PackageManager.GET_GIDS) == 0
                     ? EMPTY_INT_ARRAY : permissionsState.computeGids(userId);
@@ -242,7 +235,7 @@ filterSharedLibPackageLPr也只是一个判断方法，方法注释是：Callers
                 });
             }
 
-    		// 这里会将flags继续传入
+    		// [the flags will be passed in this block]
             PackageInfo packageInfo = PackageInfoUtils.generate(p, gids, flags,
                     ps.firstInstallTime, ps.lastUpdateTime, permissions, state, userId, ps);
 
@@ -255,7 +248,7 @@ filterSharedLibPackageLPr也只是一个判断方法，方法注释是：Callers
 
             return packageInfo;
             
-            // 找到了PackageInfo不会走入下面的
+            // [When PackageInfo is found, it won't enter the following section.]
         } else if ((flags & MATCH_UNINSTALLED_PACKAGES) != 0 && state.isAvailable(flags)) {
             PackageInfo pi = new PackageInfo();
             pi.packageName = ps.name;
@@ -283,7 +276,7 @@ filterSharedLibPackageLPr也只是一个判断方法，方法注释是：Callers
     }
 ```
 
-对于PackageInfoUtils的阅读就可以得到最终结论了
+Reading `PackageInfoUtils` will provide the final conclusion.
 
 ```java
 81      /**
@@ -321,7 +314,7 @@ filterSharedLibPackageLPr也只是一个判断方法，方法注释是：Callers
 113              return null;
 114          }
 115  
-    		// 这里会将flags继续传入
+    		// [Here, the flags will be passed on.]
 116          PackageInfo info = PackageInfoWithoutStateUtils.generateWithoutComponentsUnchecked(pkg,
 117                  gids, flags, firstInstallTime, lastUpdateTime, grantedPermissions, state, userId,
 118                  apexInfo, applicationInfo);
@@ -329,7 +322,7 @@ filterSharedLibPackageLPr也只是一个判断方法，方法注释是：Callers
 120          info.isStub = pkg.isStub();
 121          info.coreApp = pkg.isCoreApp();
 122  
-    		// flags为0时不会获得ACTIVITIES信息
+    		// [When flags are 0, ACTIVITIES information will not be retrieved.]
 123          if ((flags & PackageManager.GET_ACTIVITIES) != 0) {
 124              final int N = pkg.getActivities().size();
 125              if (N > 0) {
@@ -350,7 +343,7 @@ filterSharedLibPackageLPr也只是一个判断方法，方法注释是：Callers
 140                  info.activities = ArrayUtils.trimToSize(res, num);
 141              }
 142          }
-    		// flags为0时不会获得RECEIVERS信息
+    		// [When flags are 0, RECEIVERS information will not be retrieved.]
 143          if ((flags & PackageManager.GET_RECEIVERS) != 0) {
 144              final int size = pkg.getReceivers().size();
 145              if (size > 0) {
@@ -367,7 +360,7 @@ filterSharedLibPackageLPr也只是一个判断方法，方法注释是：Callers
 156                  info.receivers = ArrayUtils.trimToSize(res, num);
 157              }
 158          }
-    		// flags为0时不会获得SERVICES信息
+    		// [When flags are 0, SERVICES information will not be retrieved.]
 159          if ((flags & PackageManager.GET_SERVICES) != 0) {
 160              final int size = pkg.getServices().size();
 161              if (size > 0) {
@@ -384,7 +377,7 @@ filterSharedLibPackageLPr也只是一个判断方法，方法注释是：Callers
 172                  info.services = ArrayUtils.trimToSize(res, num);
 173              }
 174          }
-    		// flags为0时不会获得PROVIDERS信息
+    		// [When flags are 0, PROVIDERS information will not be retrieved.]
 175          if ((flags & PackageManager.GET_PROVIDERS) != 0) {
 176              final int size = pkg.getProviders().size();
 177              if (size > 0) {
@@ -402,7 +395,7 @@ filterSharedLibPackageLPr也只是一个判断方法，方法注释是：Callers
 189                  info.providers = ArrayUtils.trimToSize(res, num);
 190              }
 191          }
-    		// flags为0时不会获得INSTRUMENTATION信息
+    		// [When flags are 0, INSTRUMENTATION information will not be retrieved.]
 192          if ((flags & PackageManager.GET_INSTRUMENTATION) != 0) {
 193              int N = pkg.getInstrumentations().size();
 194              if (N > 0) {
@@ -419,7 +412,7 @@ filterSharedLibPackageLPr也只是一个判断方法，方法注释是：Callers
 205  
 ```
 
-PackageInfoWithoutStateUtils.generateWithoutComponentsUnchecked() 源码如下
+Here's the source code of PackageInfoWithoutStateUtils.generateWithoutComponentsUnchecked() 
 
 ```java
 
@@ -462,11 +455,11 @@ PackageInfoWithoutStateUtils.generateWithoutComponentsUnchecked() 源码如下
 237          pi.compileSdkVersionCodename = pkg.getCompileSdkVersionCodeName();
 238          pi.firstInstallTime = firstInstallTime;
 239          pi.lastUpdateTime = lastUpdateTime;
-    		// flags为0时不会获得GIDS信息
+    		// [When flags are 0, GIDS information will not be retrieved.]
 240          if ((flags & PackageManager.GET_GIDS) != 0) {
 241              pi.gids = gids;
 242          }
-    		// flags为0时不会获得CONFIGURATIONS信息
+    		// [When flags are 0, CONFIGURATIONS information will not be retrieved.]
 243          if ((flags & PackageManager.GET_CONFIGURATIONS) != 0) {
 244              int size = pkg.getConfigPreferences().size();
 245              if (size > 0) {
@@ -484,7 +477,7 @@ PackageInfoWithoutStateUtils.generateWithoutComponentsUnchecked() 源码如下
 257                  pkg.getFeatureGroups().toArray(pi.featureGroups);
 258              }
 259          }
-    		// flags为0时不会获得PERMISSIONS信息
+    		// [When flags are 0, PERMISSIONS information will not be retrieved.]
 260          if ((flags & PackageManager.GET_PERMISSIONS) != 0) {
 261              int size = ArrayUtils.size(pkg.getPermissions());
 262              if (size > 0) {
@@ -518,7 +511,7 @@ PackageInfoWithoutStateUtils.generateWithoutComponentsUnchecked() 源码如下
 290                  }
 291              }
 292          }
-    		// flags为0时不会获得ATTRIBUTIONS信息
+    		// [When flags are 0, ATTRIBUTIONS information will not be retrieved.]
 293          if ((flags & PackageManager.GET_ATTRIBUTIONS) != 0) {
 294              int size = ArrayUtils.size(pkg.getAttributions());
 295              if (size > 0) {
@@ -561,7 +554,7 @@ PackageInfoWithoutStateUtils.generateWithoutComponentsUnchecked() 源码如下
 332  
 333          PackageParser.SigningDetails signingDetails = pkg.getSigningDetails();
 334          // deprecated method of getting signing certificates
-    		// flags为0时不会获得SIGNATURES信息
+    		// [When flags are 0, SIGNATURES information will not be retrieved.]
 335          if ((flags & PackageManager.GET_SIGNATURES) != 0) {
 336              if (signingDetails.hasPastSigningCertificates()) {
 337                  // Package has included signing certificate rotation information.  Return the oldest
@@ -577,7 +570,7 @@ PackageInfoWithoutStateUtils.generateWithoutComponentsUnchecked() 源码如下
 347              }
 348          }
 349  
-    		// flags为0时不会获得SIGNING_CERTIFICATESN信息
+    		// [When flags are 0, SIGNING_CERTIFICATES information will not be retrieved.]
 350          // replacement for GET_SIGNATURES
 351          if ((flags & PackageManager.GET_SIGNING_CERTIFICATES) != 0) {
 352              if (signingDetails != PackageParser.SigningDetails.UNKNOWN) {
@@ -595,11 +588,9 @@ PackageInfoWithoutStateUtils.generateWithoutComponentsUnchecked() 源码如下
 
 
 
+# Comments in the PackageInfo Source Code
 
-
-# PackageInfo本身的注释
-
-PackageInfo源码中本身含有的注释也说明了flags=0时，不会获取的信息
+The comments within the PackageInfo source code also indicate that when flags=0, certain information will not be retrieved.
 
 ```java
 25  /**
@@ -739,23 +730,19 @@ PackageInfo源码中本身含有的注释也说明了flags=0时，不会获取�
 
 
 
-# 总结
+# Summary
 
-当使用PackageManager.getPackageInfo(String packageName, int flags)时，传入flags等于0，不会获取四大组件、permissions、gids等信息。
+When using `PackageManager.getPackageInfo(String packageName, int flags)`, passing in flags as 0 will not retrieve information about the four major components, permissions, gids, etc.
 
-可以参考PackageManager.GET_开头的所有Flag，认为不加入此Flag，并不会获得相应信息。
+You can refer to all flags starting with `PackageManager.GET_` to understand that excluding these flags will not fetch the corresponding information.
 
-
-
-如果要加入多个Flag，可以参考下面的写法：
+To include multiple flags, you can use the following format:
 
 ```java
 PackageInfo info = packageManager.getPackageInfo(context.getPackageName(), PackageManager.GET_ACTIVITIES | PackageManager.GET_PERMISSIONS);
 ```
 
-
-
-传入flags=0时PackageInfo包含的基础信息：
+When passing flags=0, the basic information included in PackageInfo is:
 
 - packageName
 - versionCode

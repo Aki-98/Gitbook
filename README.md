@@ -12,7 +12,7 @@
 
 你好，
 
-我是Leah，向你介绍一下我自己。
+我是Aki，向你介绍一下我自己。
 
 暨南大学软件工程2022年毕业的学生，目前在中国索尼任职安卓工程师，负责索尼CN电视的开发和维护等。
 
@@ -24,7 +24,7 @@
 
 **技术笔记：**
 
-https://leah-98.github.io/Gitbook/cs
+https://aki-98.github.io/Gitbook/cs
 
 计算机基础、算法、语言、工程等方面的笔记
 
@@ -32,7 +32,7 @@ https://leah-98.github.io/Gitbook/cs
 
 **技术博客：**
 
-https://leah-98.github.io/Gitbook/csblog
+https://aki-98.github.io/Gitbook/csblog
 
 每篇分中文版和英文版，目前主要为源码阅读和工程实践两个板块
 
@@ -40,7 +40,7 @@ https://leah-98.github.io/Gitbook/csblog
 
 **知识笔记：**
 
-https://leah-98.github.io/Gitbook/know
+https://aki-98.github.io/Gitbook/know
 
 包含一些书摘、读书笔记、通识笔记等
 
@@ -68,7 +68,7 @@ I'm glad you've visited my Gitbook Site, and I hope my content is helpful to you
 
 **Technical Notes**:(Only Chinese)
 
-https://leah-98.github.io/Gitbook/cs
+https://aki-98.github.io/Gitbook/cs
 
 Notes on computer fundamentals, algorithms, programming languages, and engineering.
 
@@ -76,7 +76,7 @@ Notes on computer fundamentals, algorithms, programming languages, and engineeri
 
 **Technical Blog**:
 
-https://leah-98.github.io/Gitbook/csblog
+https://aki-98.github.io/Gitbook/csblog
 
 Each post is available in both Chinese and English, with the main focus currently on source code reading and engineering practices.
 
@@ -84,7 +84,7 @@ Each post is available in both Chinese and English, with the main focus currentl
 
 **Knowledge Notes**:(Only Chinese)
 
-https://leah-98.github.io/Gitbook/know
+https://aki-98.github.io/Gitbook/know
 
 Includes excerpts from books, reading notes, and general knowledge notes.
 
@@ -112,7 +112,7 @@ Includes excerpts from books, reading notes, and general knowledge notes.
 
 **技術ノート**(Only Chinese):
 
-https://leah-98.github.io/Gitbook/cs
+https://aki-98.github.io/Gitbook/cs
 
 コンピュータの基礎、アルゴリズム、プログラミング言語、エンジニアリングに関するノートです。
 
@@ -120,7 +120,7 @@ https://leah-98.github.io/Gitbook/cs
 
 **技術ブログ**:
 
-https://leah-98.github.io/Gitbook/csblog
+https://aki-98.github.io/Gitbook/csblog
 
 各記事は中国語版と英語版があります。現在は主にソースコードの読み解きとエンジニアリングの実践に焦点を当てています。
 
@@ -128,7 +128,7 @@ https://leah-98.github.io/Gitbook/csblog
 
 **知識ノート**(Only Chinese):
 
-https://leah-98.github.io/Gitbook/know
+https://aki-98.github.io/Gitbook/know
 
 書籍の引用、読書ノート、一般知識のノートを含んでいます。
 
